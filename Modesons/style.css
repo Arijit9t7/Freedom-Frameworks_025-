@@ -638,5 +638,220 @@ main {
     }
 }
 
+/* arijit code */
+.Arijit-container {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.spotlight-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.spotlight-header {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.spotlight-header .toggle {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.spotlight-header .active {
+    color: red;
+    border-bottom: 2px solid red;
+}
+
+.description {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.slider img {
+    margin: 0 10px;
+    height: 100px;
+}
+
+.arrow {
+    background-color: transparent;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.left-arrow {
+    position: absolute;
+    left: 0;
+}
+
+.right-arrow {
+    position: absolute;
+    right: 0;
+}
 
 
+.rewards-section {
+    padding: 20px;
+}
+
+.rewards-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.rewards-steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.step {
+    width: 30%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.step-number {
+    font-size: 2em;
+    color: red;
+}
+
+.step h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.step p {
+    font-size: 1em;
+    color: #666;
+}
+
+.step-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.icon {
+    text-align: center;
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.icon p {
+    font-size: 1em;
+    margin: 10px 0 5px;
+}
+
+.icon small {
+    font-size: 0.8em;
+    color: #999;
+}
+
+.cta-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .step {
+        width: 100%;
+    }
+}
+
+.testimonial-section {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+.testimonial-section h2 {
+    margin-bottom: 40px;
+}
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.testimonial-card {
+    min-width: 30%;
+    margin: 0 15px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+.stars {
+    color: red;
+    margin: 10px 0;
+}
+.testimonial-footer {
+    margin-top: 10px;
+    color: #666;
+}
+.join-button {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px 0;
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+.carousel-button--left {
+    left: 10px;
+}
+.carousel-button--right {
+    right: 10px;
+}
+
+/* arijit code ends */
