@@ -19,6 +19,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Questrial", sans-serif;
+
+
 }
 
 header {
@@ -29,60 +32,60 @@ header {
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff;
-    padding: 15px 0;
-    width: 100%;
-    max-width: 1400px;
-    margin: auto;
-    font-family: "Questrial", sans-serif;
-    font-weight: 500;
-    font-style: normal;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 15px 0;
+  width: 1400px;
+  margin: auto;
+  font-family: "Questrial", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+
 }
 
 .logo-link {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .logo-link div:nth-of-type(2) {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 .logo-link div:nth-of-type(2) a {
-    text-transform: uppercase;
-    font-size: 0.86rem;
-    text-decoration: none;
-    color: black;
+  text-transform: uppercase;
+  font-size: 0.86rem;
+  text-decoration: none;
+  color: black;
 }
 
 .logo-link div:nth-of-type(2) a:nth-last-child(1) {
-    text-transform: uppercase;
-    font-size: 0.86rem;
-    text-decoration: none;
-    color: var(--mode-red);
+  text-transform: uppercase;
+  font-size: 0.86rem;
+  text-decoration: none;
+  color: var(--mode-red);
 }
 
 .logo img {
-    width: 160px;
-    margin-left: 20px;
+  width: 160px;
+  margin-left: 20px;
 }
 
 .nav-button-image {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .nav-button-image button {
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    font-size: 0.86rem;
-    outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 0.86rem;
+  outline: none;
 }
 
 /* carousel section */
@@ -262,7 +265,7 @@ h1 {
 }
 
 /* Product section */
-.product-container {
+.product-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -276,6 +279,7 @@ h1 {
     text-align: center;
     font-family: "Questrial", sans-serif;
     transition: transform 0.3s ease;
+    line-height: 25px;
 }
 
 .product-card:hover {
@@ -320,12 +324,16 @@ h1 {
     margin: 20px 0;
 }
 
+.price{
+  font-size: var(--p-font);
+}
 /* Responsive Styles */
 
 @media (max-width: 1400px) {
     nav, main {
         width: 100%;
         padding: 0 20px;
+        position: fixed;
     }
 }
 
@@ -373,7 +381,7 @@ h1 {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 412px) {
     nav, main {
         width: 100%;
         padding: 0 10px;

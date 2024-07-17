@@ -43,8 +43,6 @@ var swiper = new Swiper(".categorySwiper", {
 
 
 
-
-
 const products = [
     { id: 1, name: "ULLA JOHNSON", description: "Asilia Long Sleeve Maxi Dress In Pristine", price: "$39.99", image: "/Freedom-Frameworks_025-/Modesons/images/product1.jpg" },
     { id: 2, name: "CINQ A SEPT", description: "Cinq A Sept Siv Denim Belted Mini Dress In Indigo", price: "$39.99", image: "/Freedom-Frameworks_025-/Modesons/images/product2.jpg" },
@@ -69,13 +67,19 @@ function renderProducts() {
         const productCard = document.createElement('div');
         productCard.classList.add('product-card');
 
+        const originalPrice = parseFloat(product.price.replace('$', '')) * 1.25; // Assuming 25% discount
+        const originalPriceFormatted = `$${originalPrice.toFixed(2)}`;
+
         productCard.innerHTML = `
             <div class="image-box">
                 <img src="${product.image}" alt="${product.name}">
             </div>
             <h3>${product.name}</h3>
             <p>${product.description}</p>
-            <p class="price">${product.price}</p>
+            <p class="price">
+                <span style="text-decoration: line-through;color:red;">${originalPriceFormatted}</span>
+                ${product.price}
+            </p>
             <button>Add to Cart</button>
         `;
 
@@ -92,5 +96,5 @@ document.getElementById('viewBtn').addEventListener('click', () => {
     }
 });
 
-// Initial render
 renderProducts();
+
