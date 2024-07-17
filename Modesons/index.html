@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modesens</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
 </head>
 
 <body>
@@ -16,10 +20,12 @@
 
         <nav>
             <div class="logo-link">
-                <div class="logo">
-                    <img src="./images/logo.png" alt="">
-                </div>
-                <div>
+                <a href="./index.html">
+                    <div class="logo">
+                        <img src="./images/logo.png" alt="">
+                    </div>
+                </a>
+                <div class="nav-links">
                     <a href="">Women</a>
                     <a href="">men</a>
                     <a href="">beauty</a>
@@ -47,24 +53,197 @@
                     </span>
                 </button>
                 <button>
-                    <span class="material-symbols-outlined">
+                    <span id="profileBtn" class="material-symbols-outlined">
                         person
                     </span>
                 </button>
                 <button>
-                    <span style="vertical-align: middle;" class="material-symbols-outlined">
+                    <span style="font-size: 0.9rem;">LOGIN</span>
+                </button>
+
+            </div>
+            <div class="nav-main-dropdown" id="nav-main-dropdown">
+                <div>
+                    <span style="vertical-align: middle; " class="material-symbols-outlined">
                         search
                     </span>
-                    <span style="font-size: 1rem;">SEARCH</span>
-                </button>
+                    <button>Search</button>
+                </div>
+                <div>
+                    <span style="vertical-align: middle; " class="material-symbols-outlined">
+                        favorite
+                    </span>
+                    <button>Favorites</button>
+                </div>
+                <div>
+                    <span style="vertical-align: middle; " class="material-symbols-outlined">
+                        notifications
+                    </span>
+                    <button>Notifications</button>
+                </div>
+                <div>
+                    <span style="vertical-align: middle; " class="material-symbols-outlined">
+                        local_mall
+                    </span>
+                    <button>My Cart</button>
+                </div>
+                <div>
+                    <span style="vertical-align: middle; " class="material-symbols-outlined">
+                        person
+                    </span>
+                    <button id="signUpRedirect">Sign Up</button>
+                </div>
             </div>
         </nav>
     </header>
 
-    <main style="height: 200vh;">
+    <main>
+
+        <div class="hero-section">
+
+            <div class="hero-text-gif">
+
+                <div class="hero-text">
+                    <h2>CHECK MODESENS BEFORE YOU BUY</h2>
+                    <p>We’re not a store.</p>
+                    <p>We’re your smart personal shopper.</p>
+                </div>
+
+                <div class="hero-gif">
+                    <img src="./images/20240123topbanner_gif_en.gif" alt="">
+                </div>
+
+            </div>
+            <div class="hero-search">
+                <input type="text" placeholder="Search">
+                <button>Search</button>
+            </div>
+
+        </div>
 
     </main>
 
+
+    <section class="carousal-container">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide not">
+                    <div class="carousal-card">
+                        <div class="carousal-card-textarea">
+                            <h2>
+                                Compare 600+ Stores In <span style="color: #c00000;">One</span> Place
+                            </h2>
+                            <p>
+                                ModeSens allows you to compare prices and availability across hundreds of stores and
+                                thousands of brands.
+                            </p>
+                            <a href="">Try it now</a>
+                        </div>
+                        <div class="carousal-card-imagearea">
+                            <img src="./images/carousal1/1.gif" alt="">
+                            <img src="./images/carousal1/m1.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="carousal-card">
+                        <div class="carousal-card-textarea">
+                            <h2>
+                                Check ModeSens Before You Buy
+                            </h2>
+                            <p>
+                                Want to score the best price-on anything-in seconds? Just paste a product link from any
+                                partner retailer into the search bar on our apor website.
+                            </p>
+                            <a href="">Try it now</a>
+                        </div>
+                        <div class="carousal-card-imagearea">
+                            <img src="./images/carousal1/2.gif" alt="">
+                            <img src="./images/carousal1/m2.gif" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="carousal-card">
+                        <div class="carousal-card-textarea">
+                            <h2>
+                                Fashion-Forward Community
+                            </h2>
+                            <p>
+                                You look amazing on us! Come on, join the ModeSens Fashion Community.
+                            </p>
+                            <a href="">JOIN MODESENS COMMUNITY</a>
+                            <a href="">FASHION BLOGS</a>
+                        </div>
+                        <div class="carousal-card-imagearea">
+                            <img style="width: 400px;" src="./images/carousal1/3.png" alt="">
+                            <img src="./images/carousal1/3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="color: #c00000; " class="swiper-button-prev"></div>
+            <div style="color: #c00000; " class="swiper-button-next"></div>
+            <!-- <div  class="swiper-pagination"></div> -->
+        </div>
+    </section>
+
+
+    <section class="features-section">
+        <div>
+            <h2>BE PART OF THE 2 MILLION STRONG: OVER $100 MILLION SAVED!</h2>
+        </div>
+        <div class="feature-card-container">
+            <div class="feature-card">
+                <span class="material-symbols-outlined">
+                    location_on
+                </span>
+                <h3>Your Search Ends Here</h3>
+                <p>Shop 12,000+ brands from our 600+ partners
+                    all in one place.</p>
+            </div>
+            <div class="feature-card">
+                <span class="material-symbols-outlined">
+                    verified_user
+                </span>
+                <h3>Shop Confidently</h3>
+                <p>Always score the best price and shop smarter with ModeSens Shopper Protection.</p>
+            </div>
+            <div class="feature-card">
+                <span class="material-symbols-outlined">
+                    paid
+                </span>
+                <h3>Earn Rewards</h3>
+                <p>Earn up to 3x points for every $1 you spend when shopping with ModeSens.</p>
+            </div>
+        </div>
+        <div class="feature-card-button">
+            <button>Read our story</button>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- ashita start -->
+
+    
+
+
+
+    <!-- ashita ends -->
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./index.js"></script>
 </body>
 
 </html>
