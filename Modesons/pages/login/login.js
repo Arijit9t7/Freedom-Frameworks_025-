@@ -23,18 +23,18 @@ const handleLogin = async (e) => {
 
     e.preventDefault();
 
-    let email = document.getElementById('loginEmail');
-    let password = document.getElementById('loginPassword');
+    let loginEmail = document.getElementById('loginEmail');
+    let loginPassword = document.getElementById('loginPassword');
 
-    console.log(email.value, password.value);
+    // console.log(email.value, password.value);
 
-    if (email === "" && password === '') {
+    if (loginEmail == "" && loginPassword === '') {
         alert('Fill all the field')
     }
     else {
 
-        let email = email.value
-        let password = password.value
+        let email = loginEmail.value
+        let password = loginPassword.value
 
         fetch(`${baseUrl}/users`)
             .then((res) => res.json())
@@ -50,9 +50,9 @@ const handleLogin = async (e) => {
                     alert('Login Successfull')
                     localStorage.setItem('isLogged', JSON.stringify({
                         id: usersArr[0].id,
-                        email
+                        loginEmail
                     }))
-                    // window.location.href = "../../index.html"
+                    window.location.href = "../../index.html"
                 }
             })
 
