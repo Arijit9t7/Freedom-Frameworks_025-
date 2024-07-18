@@ -170,14 +170,13 @@ var swiper = new Swiper(".categorySwiper", {
 });
 
 
-
 const products = [
-  { id: 1, name: "ULLA JOHNSON", description: "Asilia Long Sleeve Maxi Dress In Pristine", price: "$39.99", image: "/Freedom-Frameworks_025-/Modesons/images/carousel2/product1.jpg" },
+  { id: 1, name: "ULLA JOHNSON", description: "Asilia Long Sleeve Maxi Dress In Pristine", price: "$39.99", image: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQBZYZEvzwVfGgjfbGpclS5RUYpIm50-aJN_ToFgkFP1mQS4BI-G46R4l4pfP3o-DR3a_gAvceh37GVDOO0cDxKeN5CavrGQGRScUT1fRgP" },
   { id: 2, name: "CINQ A SEPT", description: "Cinq A Sept Siv Denim Belted Mini Dress In Indigo", price: "$39.99", image: "/Freedom-Frameworks_025-/Modesons/images/carousel2/product2.jpg" },
   { id: 3, name: "FRAME", description: "Danube Denim In Danube Medium Indigo Wash", price: "$49.99", image: "/Freedom-Frameworks_025-/Modesons/images/carousel2/product3.jpg" },
   { id: 4, name: "VERONICA BEARD", description: "Magnolia Two-tone Sunburst Knit Midi Dress In Gild", price: "$59.99", image: "/Freedom-Frameworks_025-/Modesons/images/carousel2/product4.jpg" },
   { id: 5, name: "ULLA JOHNSON", description: "Frankie Pattern Short Sleeve Crop Sweater In Confetti", price: "$69.99", image: "/Freedom-Frameworks_025-/Modesons/images/carousel2/product5.jpg" },
-  { id: 6, name: "ACNE STUDIOS", description: "Logo Printed Crewneck Pattern  T Shirt In Pink", price: "$79.99", image: "/Freedom-Frameworks_025-/Modesons/images/carousel2/product6.jpg" },
+  { id: 6, name: "ACNE STUDIOS", description: "Logo Printed Crewneck Pattern T Shirt In Pink", price: "$79.99", image: "/Freedom-Frameworks_025-/Modesons/images/carousel2/product6.jpg" },
   { id: 7, name: "VERONICA BEARD", description: "Dali Leather Platform Slide Sandals In Beige", price: "$89.99", image: "/Freedom-Frameworks_025-/Modesons/images/carousel2/product7.jpg" },
   { id: 8, name: "BALMAIN", description: "Monogram Jacquard Dress In Ggd White/ Navy", price: "$99.99", image: "/Freedom-Frameworks_025-/Modesons/images/carousel2/product8.jpg" },
 ];
@@ -186,16 +185,16 @@ let productsDisplayed = 4;
 
 function renderProducts() {
   const productContainer = document.getElementById('product-container');
-  productContainer.innerHTML = ''; // Clear existing products
+  productContainer.innerHTML = ''; 
 
   for (let i = 0; i < productsDisplayed; i++) {
-      if (i >= products.length) break; // Prevent out of bounds
+      if (i >= products.length) break; 
 
       const product = products[i];
       const productCard = document.createElement('div');
       productCard.classList.add('product-card');
 
-      const originalPrice = parseFloat(product.price.replace('$', '')) * 1.25; // Assuming 25% discount
+      const originalPrice = parseFloat(product.price.replace('$', '')) * 1.25; 
       const originalPriceFormatted = `$${originalPrice.toFixed(2)}`;
 
       productCard.innerHTML = `
@@ -211,8 +210,16 @@ function renderProducts() {
           <button>Add to Cart</button>
       `;
 
+      productCard.addEventListener('click', () => {
+          navigateToProductDescription(product.id);
+      });
+
       productContainer.appendChild(productCard);
   }
+}
+
+function navigateToProductDescription(productId) {
+  window.location.href = `/Freedom-Frameworks_025-/Modesons/pages/productDescriptionPage/productDescriptionPage.html`;
 }
 
 document.getElementById('viewBtn').addEventListener('click', () => {
@@ -225,8 +232,6 @@ document.getElementById('viewBtn').addEventListener('click', () => {
 });
 
 renderProducts();
-
-
 
 //........................Ashita code ends....................
 
@@ -242,6 +247,7 @@ const fiveItrateProductCategoryTheirCat = document.querySelectorAll(
 let currentlyScaled = document.querySelector(
   ".five-itrate-product-category.scaled"
 );
+// footer section
 const womenCheckbox = document.getElementById("women");
 const menCheckbox = document.getElementById("men");
 
@@ -251,6 +257,7 @@ if (!currentlyScaled) {
   containerOfFiveProductCategoryTheirCon.innerHTML = "";
   fiveItrateProductCategoryTheirCat[0].style.display = "block";
 }
+//footer section ends
 
 children.forEach((child, index) => {
   child.addEventListener("mouseover", () => {
