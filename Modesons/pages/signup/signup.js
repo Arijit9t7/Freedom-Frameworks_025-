@@ -1,14 +1,60 @@
-let profileBtn = document.getElementById('profileBtn');
-let mainDropdown = document.getElementById('nav-main-dropdown');
-let MainDropdownflag = true;
 
-function showMainDropdown() {
-    if (MainDropdownflag) {
-        mainDropdown.style.display = 'block';
-        MainDropdownflag = false;
+let baseUrl = `http://localhost:3000`;
+
+let signupBtn = document.getElementById('signupSubmitBtn');
+const handleSignup = async (e) => {
+    e.preventDefault();
+
+    let name = document.getElementById('signupName');
+    let email = document.getElementById('signupEmail');
+    let address = document.getElementById('signupAddress');
+    let password = document.getElementById('signupPassword');
+    let phoneNo = document.getElementById('signupPhoneNo');
+
+    if (name.value == '' || email.value == '' || address.value == '' || password.value == '' || phoneNo.value == '') {
+        alert('Please fill all the fields');
+        return;
     }
-    else {
-        mainDropdown.style.display = 'none';
-        MainDropdownflag = true;
+
+    console.log(name.value, email.value, address.value, password.value, phoneNo.value);
+
+    
+    let userData = {
+        id: Math.floor(Math.random() * 100000 + 1),
+        name: name.value,
+        email: email.value,
+        password: password.value,
+        phoneNo: phoneNo.value,
+        address: address.value,
+        wishlist : [],
+        cart : [],
     }
+
+    await fetch(`${baseUrl}/users`)
+        .then((res) => res.json())
+        .then((res) => {
+            let usersArr = res.filter((ele) => {
+                return ele.email == email
+            })
+
+            if (usersArr.length == 0) {
+                fetch(`${baseUrl}/users`, {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(userData)
+                }).then((res) => {
+                    alert('Signup Successfull')
+                    window.location.href = '../login/login.html'
+                })
+            }
+            else {
+                alert('Username already exist !!')
+            }
+        })
+
 }
+
+signupBtn.addEventListener('click', handleSignup);
+

@@ -29,9 +29,14 @@ var swiper = new Swiper(".mySwiper", {
 });
 
 let signupRedirect = document.getElementById("signUpRedirect");
+let loginRedirect = document.getElementById("loginRedirect");
 
 signupRedirect.addEventListener("click", () => {
   window.location.href = "./pages/signup/signup.html";
+});
+
+loginRedirect.addEventListener("click", () => {
+  window.location.href = "./pages/login/login.html";
 });
 
 // arijit code starts
