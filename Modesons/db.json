@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": 33028,
+      "name": "Ashutosh Sahu",
+      "email": "ashutoshsahu341@gmail.com",
+      "password": "121212",
+      "phoneNo": "9981237855",
+      "address": "Near 2nd church, near central bank of india, ward no 1 patakheda",
+      "wishlist": [],
+      "cart": []
+    },
+    {
+      "id": 75739,
+      "name": "demo",
+      "email": "demo@gmail.com",
+      "password": "1212",
+      "phoneNo": "1212",
+      "address": "asfafaf",
+      "wishlist": [],
+      "cart": []
+    }
+  ]
+}
