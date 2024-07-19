@@ -948,9 +948,14 @@ main {
   color: rgb(20, 20, 20);
 }
 
-.categories-container .image-box img {
+.categories-container .image-box{
   height: 500px;
   width: 200px;
+}
+
+.categories-container .image-box img {
+  height: 100%;
+  width: 100%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
 }
 
@@ -1029,15 +1034,19 @@ main {
   background: var(--text-color);
   width: 22%;
   margin: 10px;
-  padding: 20px;
+  padding: 30px;
   text-align: center;
   font-family: "Questrial", sans-serif;
   transition: transform 0.3s ease;
   line-height: 25px;
+  border: 1px solid rgb(176, 171, 171);
+  transition: all 0.5s ease;
 }
 
 #trending-now-container .product-card:hover {
   transform: scale(1.02);
+  box-shadow: 1px 1px 6px rgb(178, 177, 177);
+  background-color: rgb(243, 239, 239);
 }
 
 #trending-now-container .product-card img {
