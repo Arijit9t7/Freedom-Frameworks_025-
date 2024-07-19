@@ -15,7 +15,6 @@ const handleSignup = async (e) => {
         alert('Please fill all the fields');
         return;
     }
-    
 
     let userData = {
         id: Math.floor(Math.random() * 1000000 + 1),

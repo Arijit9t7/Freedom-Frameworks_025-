@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     fetch('https://modesense-data.onrender.com/womenproducts') 
         .then(response => response.json())
@@ -88,3 +89,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+

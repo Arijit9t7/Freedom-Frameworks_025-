@@ -13,8 +13,8 @@ function showMainDropdown() {
     }
 }
 
-let baseUrl = `https://modesense-data.onrender.com`
 
+let baseUrl = `https://modesense-data.onrender.com`
 
 let loginBtn = document.getElementById('loginSubmitBtn');
 let users = JSON.parse(localStorage.getItem('users')) || [];
@@ -49,6 +49,7 @@ const handleLogin = async (e) => {
                 else {
                     alert('Login Successfull')
                     localStorage.setItem('isLogged', JSON.stringify({
+                        id: usersArr[0].id,
                         usersArr
                     }))
                     window.location.href = "../../index.html"
