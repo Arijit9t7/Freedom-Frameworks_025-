@@ -49,8 +49,7 @@ const handleLogin = async (e) => {
                 else {
                     alert('Login Successfull')
                     localStorage.setItem('isLogged', JSON.stringify({
-                        id: usersArr[0].id,
-                        loginEmail
+                        usersArr
                     }))
                     window.location.href = "../../index.html"
                 }
@@ -58,6 +57,5 @@ const handleLogin = async (e) => {
 
     }
 }
-
 
 loginBtn.addEventListener('click', handleLogin);
