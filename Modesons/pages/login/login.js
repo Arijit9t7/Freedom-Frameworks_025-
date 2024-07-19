@@ -13,7 +13,7 @@ function showMainDropdown() {
     }
 }
 
-let baseUrl = `http://localhost:3000`
+let baseUrl = `https://modesense-data.onrender.com`
 
 
 let loginBtn = document.getElementById('loginSubmitBtn');

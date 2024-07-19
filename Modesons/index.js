@@ -92,42 +92,32 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 });
 
-const track = document.querySelector(".carousel-track");
-const slides = Array.from(track.children);
-const nextButton = document.querySelector(".carousel-button--right");
-const prevButton = document.querySelector(".carousel-button--left");
-const slideWidth = slides[0].getBoundingClientRect().width;
+const scrollers = document.querySelectorAll(".scroller");
 
-const setSlidePosition = (slide, index) => {
-  slide.style.left = slideWidth * index + "px";
-};
-slides.forEach(setSlidePosition);
+// If a user hasn't opted in for recuded motion, then we add the animation
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  addAnimation();
+}
 
-const moveToSlide = (track, currentSlide, targetSlide) => {
-  track.style.transform = "translateX(-" + targetSlide.style.left + ")";
-  currentSlide.classList.remove("current-slide");
-  targetSlide.classList.add("current-slide");
-};
+function addAnimation() {
+  scrollers.forEach((scroller) => {
+    // add data-animated="true" to every `.scroller` on the page
+    scroller.setAttribute("data-animated", true);
 
-prevButton.addEventListener("click", (e) => {
-  const currentSlide = track.querySelector(".current-slide") || slides[0];
-  const prevSlide = currentSlide.previousElementSibling;
+    // Make an array from the elements within `.scroller-inner`
+    const scrollerInner = scroller.querySelector(".scroller__inner");
+    const scrollerContent = Array.from(scrollerInner.children);
 
-  if (prevSlide) {
-    moveToSlide(track, currentSlide, prevSlide);
-  }
-});
-
-nextButton.addEventListener("click", (e) => {
-  const currentSlide = track.querySelector(".current-slide") || slides[0];
-  const nextSlide = currentSlide.nextElementSibling;
-
-  if (nextSlide) {
-    moveToSlide(track, currentSlide, nextSlide);
-  }
-});
-
-slides[0].classList.add("current-slide");
+    // For each item in the array, clone it
+    // add aria-hidden to it
+    // add it into the `.scroller-inner`
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute("aria-hidden", true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
 // arijit code ends
 
 // ------------Created by vikram starts--------------
