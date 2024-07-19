@@ -1,3 +1,192 @@
-body{
-    color: blue;
+.Arijit-productCon {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #888;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+}
+
+.item-count {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #333;
+}
+
+.filter-tags span {
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.pagination span {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination span:hover {
+    background-color: #f0f0f0;
+}
+
+.actions button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.actions button:hover {
+    background-color: #333;
+}
+
+.product-section {
+    display: flex;
+    margin: 20px;
+}
+
+.sidebar {
+    width: 200px;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.filter-category {
+    margin: 10px 0;
+}
+
+.dropdown-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    position: relative;
+}
+
+.dropdown-btn::after {
+    content: '\25BC';
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+}
+
+.dropdown-btn:hover::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.dropdown-container {
+    display: none;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.dropdown-container input, .dropdown-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    width: calc(100% - 200px);
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+}
+
+.product img {
+    max-width: 100%;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.product-details h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-details p {
+    font-size: 14px;
+    color: #888;
+}
+
+.product-details a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+.product-details a:hover {
+    text-decoration: underline;
 }
