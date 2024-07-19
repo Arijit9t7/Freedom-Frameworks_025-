@@ -1,5 +1,5 @@
 
-let baseUrl = `http://localhost:3000`;
+let baseUrl = `https://modesense-data.onrender.com`;
 
 let signupBtn = document.getElementById('signupSubmitBtn');
 const handleSignup = async (e) => {
@@ -16,11 +16,8 @@ const handleSignup = async (e) => {
         return;
     }
 
-    console.log(name.value, email.value, address.value, password.value, phoneNo.value);
-
-    
     let userData = {
-        id: Math.floor(Math.random() * 100000 + 1),
+        id: Math.floor(Math.random() * 1000000 + 1),
         name: name.value,
         email: email.value,
         password: password.value,
@@ -28,13 +25,14 @@ const handleSignup = async (e) => {
         address: address.value,
         wishlist : [],
         cart : [],
+        userOrder : []
     }
 
-    await fetch(`${baseUrl}/users`)
+    fetch(`${baseUrl}/users`)
         .then((res) => res.json())
         .then((res) => {
             let usersArr = res.filter((ele) => {
-                return ele.email == email
+                return ele.email == email.value
             })
 
             if (usersArr.length == 0) {

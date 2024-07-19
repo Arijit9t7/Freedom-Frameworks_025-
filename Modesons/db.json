@@ -19,6 +19,28 @@
       "address": "asfafaf",
       "wishlist": [],
       "cart": []
+    },
+    {
+      "id": 1045,
+      "name": "Ashutosh Sahu",
+      "email": "ashusahu145@gmail.com",
+      "password": "121212",
+      "phoneNo": "09981237855",
+      "address": "Near 2nd church, near central bank of india, ward no 1 patakheda",
+      "wishlist": [],
+      "cart": [],
+      "userOrder": []
+    },
+    {
+      "id": 56034,
+      "name": "Ashutosh Sahu",
+      "email": "ashusahu145@gmail.com",
+      "password": "121212",
+      "phoneNo": "09981237855",
+      "address": "Near 2nd church, near central bank of india, ward no 1 patakheda",
+      "wishlist": [],
+      "cart": [],
+      "userOrder": []
     }
   ]
 }

@@ -13,8 +13,8 @@ function showMainDropdown() {
     }
 }
 
-let baseUrl = `http://localhost:3000`
 
+let baseUrl = `https://modesense-data.onrender.com`
 
 let loginBtn = document.getElementById('loginSubmitBtn');
 let users = JSON.parse(localStorage.getItem('users')) || [];
@@ -50,7 +50,7 @@ const handleLogin = async (e) => {
                     alert('Login Successfull')
                     localStorage.setItem('isLogged', JSON.stringify({
                         id: usersArr[0].id,
-                        loginEmail
+                        usersArr
                     }))
                     window.location.href = "../../index.html"
                 }
@@ -58,6 +58,5 @@ const handleLogin = async (e) => {
 
     }
 }
-
 
 loginBtn.addEventListener('click', handleLogin);
