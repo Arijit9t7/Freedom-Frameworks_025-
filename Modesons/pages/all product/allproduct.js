@@ -11,6 +11,7 @@ let allProductArr = [kidsUrl, mensUrl, womenUrl, homeUrl, beautyUrl];
 let productsContainer = document.getElementById("allProduct-container");
 const ShowData = (data) => {
   data.forEach((product) => {
+    // console.log(product)
     const productElement = document.createElement("div");
     productElement.className = "product";
     productElement.style.cursor = "pointer";
@@ -47,6 +48,7 @@ const ShowData = (data) => {
     let discountPercentage = Math.abs(
       Math.round(((oldPriceNumber - newPriceNumber) / newPriceNumber) * 100)
     );
+
     const productDiscount = document.createElement("span");
     productDiscount.textContent = `${discountPercentage}% off`;
 
@@ -138,6 +140,7 @@ let StoreDataforSearch = async (URL) => {
 let fetchData = async (URL) => {
   let res = await fetch(URL);
   let data = await res.json();
+  console.log(data)
   return data;
 };
 
