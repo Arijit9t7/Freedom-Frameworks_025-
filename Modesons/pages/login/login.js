@@ -47,7 +47,11 @@ const handleLogin = async (e) => {
                 return user.email === email && user.password === password;
             });
 
-            if (usersArr.length === 0) {
+            if (email === 'admin@gmail.com' && password === 'admin') {
+                window.location.href = '../AdminallPages/dashboard/index.html'
+            }
+
+            else if (usersArr.length === 0) {
                 alert('Please Register First');
             } else {
                 alert('Login Successful');
