@@ -54,7 +54,7 @@ let ShowData = async (URL) => {
     editbtn.style.cursor = "pointer";
     editbtn.addEventListener("click", () => handleEdit(ele.id, div2));
     let deletebtn = document.createElement("button");
-    deletebtn.innerText = "Delete";
+    deletebtn.innerHTML = `<i class="ri-delete-bin-5-fill"></i>`;
     deletebtn.style.padding = "5px 20px";
     deletebtn.style.borderRadius = "5px";
     deletebtn.style.border = "none";
@@ -90,6 +90,7 @@ let handleSubmit = (value, inputvalue, selectvalue) => {
       },
       body: JSON.stringify(requestBody),
     }).then(() => {
+      alert("User Data Edited Successfully")
       window.location.reload();
     });
   } else {
