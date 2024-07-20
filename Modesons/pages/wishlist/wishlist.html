@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/Freedom-Frameworks_025-/Modesons/pages/wishlist/wishlist.css">
+    <link rel="stylesheet" href="./wishlist.css">
     <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
@@ -54,9 +54,7 @@
                         person
                     </span>
                 </button>
-                <button>
-                    <span style="font-size: 0.9rem;">LOGIN</span>
-                </button>
+              
 
             </div>
             <div class="nav-main-dropdown" id="nav-main-dropdown">
@@ -84,19 +82,34 @@
                     </span>
                     <button>My Cart</button>
                 </div>
-                <div>
-                    <span style="vertical-align: middle; " class="material-symbols-outlined">
-                        person
-                    </span>
-                    <button id="signUpRedirect">Sign Up</button>
-                </div>
+                
             </div>
         </nav>
     </header>
-    <div id="container">
+    <h1 id="wishlist-heading">Your Wishlist</h1>
+    <div id="wishlist-card-container"> 
+        <div class="wishlist-cards" id="wishlist-cards">
+            <div class="wishlist-card" id="wishlist-card">
+                <div class="description" id ="description">
+                    <h1 class="wishlist-card-title" id="wishlist-card-title"></h1>
+                    <p class="wishlist-card-description" id="wishlist-card-description"></p>
+                    <h2 style="margin-top:17px;margin-bottom:17px;" class="wishlist-card-price" id="wishlist-card-price">
+                        <span style="margin-left:20px;color:rgb(233, 85, 85);text-decoration:line-through;"></span>
+                    </h2>
+                    <button class="addToCartBtn" style="margin-right:20px;" id ="addToCartBtn"></button>
+                </div>
+                <div class="delete-Btn" id="delete-Btn">
+                    <span class="material-symbols-outlined">
+                        delete
+                        </span>
+                </div>  
+            </div>
+            
 
+        
+        </div>
     </div>
  
-<script src="/Freedom-Frameworks_025-/Modesons/pages/wishlist/wishlist.js"></script>
+<script src="./wishlist.js"></script>
 </body>
 </html>
