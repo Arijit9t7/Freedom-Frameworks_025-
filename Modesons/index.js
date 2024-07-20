@@ -4,19 +4,19 @@ let logoutRedirect = document.getElementById("logoutRedirect");
 
 
 let signUpRedirectBlock = document.getElementById("signUpRedirectBlock");
-let username = document.getElementById("userName");
+let loggedUsername = document.getElementById("loggedUsername");
 let userNameBlock = document.getElementById("userNameBlock");
 
 
 
 if (localStorage.getItem('isLoggedinUser')) {
   let username = JSON.parse(localStorage.getItem('isLoggedinUser'));
-  console.log(username.user.name);
+  // console.log(username.user.name);
   loginRedirect.style.display = "none";
   logoutRedirect.style.display = "block";
   signUpRedirectBlock.style.display = "none";
   userNameBlock.style.display = "block";
-  username.innerHTML = username.user.name;
+  loggedUsername.innerHTML = username.user.name;
 }
 
 logoutRedirect.addEventListener("click", () => {
@@ -67,10 +67,9 @@ signupRedirect.addEventListener("click", () => {
   window.location.href = "./pages/signup/signup.html";
 });
 
-// loginRedirect.addEventListener("click", () => {
-//   window.location.href = "./pages/login/login.html";
-// });
-
+const handleCategory = (type) => {
+  console.log(type);
+}
 // arijit code starts
 
 function showSection(section) {

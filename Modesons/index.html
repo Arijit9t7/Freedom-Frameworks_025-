@@ -25,7 +25,7 @@
                     </div>
                 </a>
                 <div class="nav-links">
-                    <a href="">Women</a>
+                    <a href="" onclick="handleCategory('women')">Women</a>
                     <a href="">men</a>
                     <a href="">beauty</a>
                     <a href="">kids</a>
@@ -67,11 +67,11 @@
 
             </div>
             <div class="nav-main-dropdown" id="nav-main-dropdown">
-                <div class="userNameBlock" style="display: none;">
+                <div id="userNameBlock" style="display: none;">
                     <span class="material-symbols-outlined">
                         account_circle
                     </span>
-                    <button id="userName">User</button>
+                    <button id="loggedUsername">User</button>
                 </div>
                 <div>
                     <span style="vertical-align: middle; " class="material-symbols-outlined">
@@ -97,7 +97,7 @@
                     </span>
                     <button>My Cart</button>
                 </div>
-                <div class="signUpRedirectBlock">
+                <div id="signUpRedirectBlock">
                     <span style="vertical-align: middle; " class="material-symbols-outlined">
                         person
                     </span>
@@ -124,10 +124,11 @@
                 </div>
 
             </div>
-            <div class="hero-search">
+            <!-- <div class="hero-search">
                 <input type="text" placeholder="Search">
                 <button>Search</button>
-            </div>
+                
+            </div> -->
 
         </div>
 

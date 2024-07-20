@@ -1,114 +1,110 @@
 
-document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://modesense-data.onrender.com/menproducts')
-        .then(response => response.json())
-        .then(data => {
-            const productsContainer = document.getElementById('allProduct-container');
-            data.forEach(product => {
-                const productElement = document.createElement('div');
-                productElement.className = 'product';
-                const productImage = document.createElement('div');
-                productImage.className = 'product-image';
-                const productDetails = document.createElement('div');
-                productDetails.className = 'product-details';
-
-                const productTitle = document.createElement('h2');
-                productTitle.textContent = product.title;
-                const productDesc = document.createElement('p');
-                productDesc.textContent = product.desc;
-                const productPrice = document.createElement('span');
-                productPrice.textContent = `${product.price}`;
-                const productOldPrice = document.createElement('span');
-                productOldPrice.textContent = `${product.oldprice}`;
-                
-                let oldPrice = product.oldprice.replace(/₹|,/g, "").trim();
-                let newPrice = product.price.replace(/₹|,/g, "").trim();
-                let oldPriceNumber = Number(oldPrice);
-                let newPriceNumber = Number(newPrice);
-                let discountPercentage = Math.abs(Math.round((oldPriceNumber - newPriceNumber) / newPriceNumber * 100));
-                const productDiscount = document.createElement('span');
-                productDiscount.textContent = `${discountPercentage}% off`;
-
-                const productImageElement = document.createElement('img');
-                productImageElement.src = product.Imagelink;
+let kidsUrl = `https://modesense-data.onrender.com/kidsproducts`;
+let mensUrl = `https://modesense-data.onrender.com/menproducts`;
+let womenUrl = `https://modesense-data.onrender.com/womenproducts`;
+let homeUrl = `https://modesense-data.onrender.com/homeproducts`;
+let beautyUrl = `https://modesense-data.onrender.com/beautyproducts`;
 
 
-                productImage.appendChild(productImageElement);
-                productDetails.append(productTitle, productDesc, productPrice, productOldPrice, productDiscount);
+let allProductArr = [kidsUrl, mensUrl, womenUrl, homeUrl, beautyUrl];
 
-                productElement.append(productImage, productDetails);
+const ShowData = (data) => {
+    const productsContainer = document.getElementById('allProduct-container');
+    data.forEach(product => {
 
-                productsContainer.append(productElement);
-            });
-        })
-        .catch(error => console.error('Error fetching products:', error));
+        const productElement = document.createElement('div');
+        productElement.className = 'product';
+        productElement.style.cursor = "pointer";
 
-    const dropdowns = document.getElementsByClassName("dropdown-btn");
+        productElement.addEventListener('click', () => {
+            window.location.href = `../productDescriptionPage/productDescriptionPage.html`;
 
-    for (let i = 0; i < dropdowns.length; i++) {
-        dropdowns[i].addEventListener("click", function () {
-            this.classList.toggle("active");
-            const dropdownContent = this.nextElementSibling;
-            if (dropdownContent.style.display === "block") {
-                dropdownContent.style.display = "none";
+            if (!localStorage.getItem('singleProduct')) {
+                localStorage.removeItem('singleProduct')
+                localStorage.setItem('singleProduct', JSON.stringify(product))
             } else {
-                dropdownContent.style.display = "block";
+                localStorage.setItem('singleProduct', JSON.stringify(product))
             }
         });
-    }
 
-    const categorySelect = document.getElementById("category-select");
-    const sortSelect = document.getElementById("sort-select");
 
-    categorySelect.addEventListener("change", function () {
-        const selectedCategory = categorySelect.value;
-        console.log("Selected category: " + selectedCategory);
-        filterProducts(selectedCategory);
+        const productImage = document.createElement('div');
+        productImage.className = 'product-image';
+        const productDetails = document.createElement('div');
+        productDetails.className = 'product-details';
+
+        const productTitle = document.createElement('h2');
+        productTitle.textContent = product.title;
+        const productDesc = document.createElement('p');
+        productDesc.textContent = product.desc;
+        const productPrice = document.createElement('span');
+        productPrice.textContent = `${product.price}`;
+        const productOldPrice = document.createElement('span');
+        productOldPrice.textContent = `${product.oldprice}`;
+
+        let oldPrice = product.oldprice.replace(/₹|,/g, "").trim();
+        let newPrice = product.price.replace(/₹|,/g, "").trim();
+        let oldPriceNumber = Number(oldPrice);
+        let newPriceNumber = Number(newPrice);
+        let discountPercentage = Math.abs(Math.round((oldPriceNumber - newPriceNumber) / newPriceNumber * 100));
+        const productDiscount = document.createElement('span');
+        productDiscount.textContent = `${discountPercentage}% off`;
+
+        const productImageElement = document.createElement('img');
+        productImageElement.src = product.Imagelink;
+
+
+        productImage.appendChild(productImageElement);
+        productDetails.append(productTitle, productDesc, productPrice, productOldPrice, productDiscount);
+
+        productElement.append(productImage, productDetails);
+
+        productsContainer.append(productElement);
     });
+}
 
-    sortSelect.addEventListener("change", function () {
-        const selectedSort = sortSelect.value;
-        console.log("Selected sort: " + selectedSort);
-        sortProducts(selectedSort);
+
+let searchData = [];
+let StoreDataforSearch = async (URL) => {
+    let data = await fetchData(URL);
+    data.forEach((ele) => {
+        searchData.push(ele);
     });
+};
 
-    function filterProducts(selectedCategory) {
-        const products = document.getElementsByClassName("product");
-        for (let i = 0; i < products.length; i++) {
-            if (selectedCategory === "all" || products[i].classList.contains(selectedCategory)) {
-                products[i].style.display = "block";
-            } else {
-                products[i].style.display = "none";
-            }
-        }
-    }
+let fetchData = async (URL) => {
+    let res = await fetch(URL);
+    let data = await res.json();
+    return data;
+};
 
-    function sortProducts(selectedSort) {
-        const products = Array.from(document.getElementsByClassName("product"));
-        products.sort((a, b) => {
-            const priceA = parseFloat(a.querySelector('.product-details p').textContent.split('₹')[1].replace(',', ''));
-            const priceB = parseFloat(b.querySelector('.product-details p').textContent.split('₹')[1].replace(',', ''));
-            return selectedSort === "high-to-low" ? priceB - priceA : priceA - priceB;
-        });
-        const productsContainer = document.getElementById("products");
-        productsContainer.innerHTML = "";
-        products.forEach(product => {
-            productsContainer.appendChild(product);
-        });
-    }
+let fetchAllData = async () => {
+    let promises = allProductArr.map((url) => StoreDataforSearch(url));
+    await Promise.all(promises);
+    ShowData(searchData);
+};
 
-    const searchButton = document.getElementById('search-button');
-    searchButton.addEventListener('click', function () {
-        const searchTerm = document.getElementById('search-input').value.toLowerCase();
-        const products = document.getElementsByClassName('product');
-        Array.from(products).forEach(product => {
-            const title = product.querySelector('.product-details h2').textContent.toLowerCase();
-            if (title.includes(searchTerm)) {
-                product.style.display = 'block';
-            } else {
-                product.style.display = 'none';
-            }
-        });
+let productSearch = document.getElementById("productSearch");
+
+let handleSearchInput = (searchData, value) => {
+    let ndata = searchData.filter((ele) => {
+        return (
+            ele.title.toLowerCase().includes(value.toLowerCase()) ||
+            ele.id.includes(value) ||
+            ele.category.toLowerCase().includes(value.toLowerCase())
+        );
     });
-});
+    ShowData(ndata)
+};
 
+productSearch.addEventListener("input", handleSearchInput(searchData, productSearch.value));
+
+
+
+fetchAllData();
+
+
+
+// allProductArr.forEach((url) => {
+//     ShowData(url);
+// })
