@@ -11,8 +11,6 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-
 </head>
 
 <body>
@@ -27,7 +25,7 @@
                     </div>
                 </a>
                 <div class="nav-links">
-                    <a href="">Women</a>
+                    <a href="" onclick="handleCategory('women')">Women</a>
                     <a href="">men</a>
                     <a href="">beauty</a>
                     <a href="">kids</a>
@@ -63,9 +61,18 @@
                 <button id="loginRedirect">
                     <span style="font-size: 0.9rem;">LOGIN</span>
                 </button>
+                <button id="logoutRedirect" style="display: none;">
+                    <span style="font-size: 0.9rem;">Logout</span>
+                </button>
 
             </div>
             <div class="nav-main-dropdown" id="nav-main-dropdown">
+                <div id="userNameBlock" style="display: none;">
+                    <span class="material-symbols-outlined">
+                        account_circle
+                    </span>
+                    <button id="loggedUsername">User</button>
+                </div>
                 <div>
                     <span style="vertical-align: middle; " class="material-symbols-outlined">
                         search
@@ -90,7 +97,7 @@
                     </span>
                     <button>My Cart</button>
                 </div>
-                <div>
+                <div id="signUpRedirectBlock">
                     <span style="vertical-align: middle; " class="material-symbols-outlined">
                         person
                     </span>
@@ -117,10 +124,11 @@
                 </div>
 
             </div>
-            <div class="hero-search">
+            <!-- <div class="hero-search">
                 <input type="text" placeholder="Search">
                 <button>Search</button>
-            </div>
+                
+            </div> -->
 
         </div>
 
@@ -325,49 +333,34 @@
 
         <div class="testimonial-section">
             <h2>WHAT OUR MEMBERS ARE SAYING</h2>
-            <section class="carousal-container">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide not">
-                            <div class="testimonial-card">
-                                <h3>Thankful</h3>
-                                <p>I tried making a purchase so many times but there was something wrong on the direct
-                                    website
-                                    but everything proceeded just fine with ModeSens. I was able to make the purchase
-                                    that I
-                                    wanted in a timely manner and I am also looking forward to the delivery. Also, the
-                                    website
-                                    and app...</p>
-                                <div class="stars">★★★★★</div>
-                                <div class="testimonial-footer">From Apple App Store</div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="testimonial-card">
-                                <h3>Great experience!</h3>
-                                <p>After an unsuccessful transaction with Poshmark trying to buy this purse, I turned to
-                                    ModeSens because I couldn't find the particular color/size I wanted on my own.
-                                    ModeSens
-                                    found what I wanted within a day. The purse arrived within 3 days. I'm ecstatic!</p>
-                                <div class="stars">★★★★★</div>
-                                <div class="testimonial-footer">Paula<br>From Trustpilot</div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
+            <section class="testimonial-cards-container">
 
-                            <div class="testimonial-card">
-                                <h3>Great item and price</h3>
-                                <p>Great item. They found it cheaper than I had expected even and shipped it super fast.
-                                </p>
-                                <div class="stars">★★★★★</div>
-                                <div class="testimonial-footer">Jessica Gonzalez<br>From Trustpilot</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="color: #c00000; " class="swiper-button-prev"></div>
-                    <div style="color: #c00000; " class="swiper-button-next"></div>
-                    <!-- <div  class="swiper-pagination"></div> -->
+                <div class="testimonial-card">
+                    <h3>Thankful</h3>
+                    <p>I tried making a purchase so many times but there was something wrong on the direct
+                        website
+                        but everything proceeded just fine with ModeSens. I was able to make the purchase that I
+                        wanted in a timely manner and I am also looking forward to the delivery. Also, the
+                        website
+                        and app...</p>
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-footer">From Apple App Store</div>
                 </div>
+                <div class="testimonial-card">
+                    <h3>Great experience!</h3>
+                    <p>After an unsuccessful transaction with Poshmark trying to buy this purse, I turned to
+                        ModeSens because I couldn't find the particular color/size I wanted on my own. ModeSens
+                        found what I wanted within a day. The purse arrived within 3 days. I'm ecstatic!</p>
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-footer">Paula<br>From Trustpilot</div>
+                </div>
+                <div class="testimonial-card">
+                    <h3>Great item and price</h3>
+                    <p>Great item. They found it cheaper than I had expected even and shipped it super fast.</p>
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-footer">Jessica Gonzalez<br>From Trustpilot</div>
+                </div>
+
             </section>
             <a href="#" class="join-button">JOIN OVER 2 MILLION MEMBERS</a>
         </div>
@@ -376,191 +369,117 @@
 
 
 
-
-
         <!-- ashita start -->
 
-    <section id="curated-section">
-        
-        <h1>CURATED JUST FOR YOU</h1>
+        <section id="curated-section">
 
-        <section class="curated-carousel-container">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="not">
-                            <img src="/Freedom-Frameworks_025-/Modesons/images/carousel2/summer-sale-image.jpg" alt="slide 1">
-                            
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="not">
-                            <img src="/Freedom-Frameworks_025-/Modesons/images/carousel2/crochet-bags-image.jpg" alt="slide 2">
-                            <div class="caption">
-                                <h1>Summer Trend: Crochet Bags</h1>
-                                <h2>Boho Style Remixed for Today</h2>
-                                <h2>SHOP THIS SUMMER</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="not">
-                            <img src="/Freedom-Frameworks_025-/Modesons/images/carousel2/dress-image.jpg" alt="Slide 3">
-                            <div class="caption">
-                                <h1>Dresses Under $200</h1>
-                                <h2>Beat the heat  without breaking the bank</h2>
-                                <h2>SHOP NOW</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="not">
-                            <img src="/Freedom-Frameworks_025-/Modesons/images/carousel2/revolve-image.jpg" alt="Slide 4">
-                            <div class="caption">
-                                
-                                <h1>Up to 65% Off</h1>
-                                <h2>Summer's Hottest styles</h2>
-                                <h2>Shop Now</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="not">
-                            <img src="/Freedom-Frameworks_025-/Modesons/images/carousel2/FWRD-image.jpg" alt="Slide 5">
-                            <div class="caption">
-                                <h1>Up to 65% Off</h1>
-                                <h2>Your Favourite Designers</h2>
-                                <h2>Shop Now</h2>
+            <h1>CURATED JUST FOR YOU</h1>
+
+            <section class="curated-carousel-container">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="not">
+                                <img src="./images/carousel2/summer-sale-image.jpg" alt="slide 1">
 
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="not">
-                            <img src="/Freedom-Frameworks_025-/Modesons/images/carousel2/tessabit-image.jpg" alt="Slide 6">
-                            <div class="caption">
-                                <h1>Summer sale</h1>
-                                <h2>Up to 60% Off</h2>
-                                <h2>Shop Now</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="not">
-                            <img src="/Freedom-Frameworks_025-/Modesons/images/carousel2/websiter-image.jpg" alt="Slide 7">
-                            <div class="caption">
-                                <h1>Up to 60% Off</h1>  
-                                <h2>Fresh and Trendy</h2>
-                                <h2>Shop Now</h2>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="not">
-                            <img src="/Freedom-Frameworks_025-/Modesons/images/carousel2/makeup-image.jpg" alt="Slide 8">
-                            <div class="caption">
-                                <h1>NEW: Super Loaded Tinted Highlight</h1>
-                                <h2>Award-Winning makeup In Reau De Peony</h2>
-                                <h1>SHOP NOW</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </section>
-        
-        <section class="categories-container">
-            <div class="swiper categorySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="not">
-                            <div class="card">
-                                <div class="image-box">
-                                    <img src="/Freedom-Frameworks_025-/Modesons/images/carousel2/categoriesImage1.jpg" alt="">
+                        <div class="swiper-slide">
+                            <div class="not">
+                                <img src="./images/carousel2/crochet-bags-image.jpg" alt="slide 2">
+                                <div class="caption">
+                                    <h1>Summer Trend: Crochet Bags</h1>
+                                    <h2>Boho Style Remixed for Today</h2>
+                                    <h2>SHOP THIS SUMMER</h2>
                                 </div>
-                                <div class="productDetails">
-                                   <h1>Modesens Community</h1>
-                                   <p>A place to post, share and connect</p>
-                                   <button class="Btn" onclick="handleBtn">Go Now</button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="not">
+                                <img src="./images/carousel2/dress-image.jpg" alt="Slide 3">
+                                <div class="caption">
+                                    <h1>Dresses Under $200</h1>
+                                    <h2>Beat the heat without breaking the bank</h2>
+                                    <h2>SHOP NOW</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="not">
+                                <img src="./images/carousel2/revolve-image.jpg" alt="Slide 4">
+                                <div class="caption">
+
+                                    <h1>Up to 65% Off</h1>
+                                    <h2>Summer's Hottest styles</h2>
+                                    <h2>Shop Now</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="not">
+                                <img src="./images/carousel2/FWRD-image.jpg" alt="Slide 5">
+                                <div class="caption">
+                                    <h1>Up to 65% Off</h1>
+                                    <h2>Your Favourite Designers</h2>
+                                    <h2>Shop Now</h2>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="not">
+                                <img src="./images/carousel2/tessabit-image.jpg" alt="Slide 6">
+                                <div class="caption">
+                                    <h1>Summer sale</h1>
+                                    <h2>Up to 60% Off</h2>
+                                    <h2>Shop Now</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="not">
+                                <img src="./images/carousel2/websiter-image.jpg" alt="Slide 7">
+                                <div class="caption">
+                                    <h1>Up to 60% Off</h1>
+                                    <h2>Fresh and Trendy</h2>
+                                    <h2>Shop Now</h2>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="swiper-slide">
+                            <div class="not">
+                                <img src="./images/carousel2/makeup-image.jpg" alt="Slide 8">
+                                <div class="caption">
+                                    <h1>NEW: Super Loaded Tinted Highlight</h1>
+                                    <h2>Award-Winning makeup In Reau De Peony</h2>
+                                    <h1>SHOP NOW</h1>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide"><div class="not">
-                        <div class="card">
-                            <div class="image-box">
-                                <img src="/Freedom-Frameworks_025-/Modesons/images/carousel2/categoriesImage2.jpg" alt="">
-                            </div>
-                            <div class="productDetails">
-                               <h1>Join Influencer Program</h1>
-                               <p>Post, Share and earn cash</p>
-                               <button class="Btn">Apply Now</button>
-                            </div>
-                        </div>
-                    </div></div>
-                    <div class="swiper-slide"><div class="not">
-                        <div class="card">
-                            <div class="image-box">
-                                <img src="/Freedom-Frameworks_025-/Modesons/images/carousel2/categoriesImage3.jpg" alt="">
-                            </div>
-                            <div class="productDetails">
-                                <h1>New sale Arrivals</h1>
-                                <p>Upto 70% off on top Designers</p>
-                                <button class="Btn">Shop Sale</button>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="not">
-                        <div class="card">
-                            <div class="image-box">
-                                <img src="/Freedom-Frameworks_025-/Modesons/images/carousel2/categoriesImage4.jpg" alt="">
-                            </div>
-                            <div class="productDetails">
-                               <h1>Modesens Blog</h1>
-                               <p>Your Fashion, news and style guide</p>
-                               <button class="Btn">Read Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="not">
-                        <div class="card">
-                            <div class="image-box">
-                                <img src="./images/carousel2/categoriesImage5.jpg" alt="">
-                            </div>
-                            <div class="productDetails">
-                               <h1>Win Modesens Credit</h1>
-                               <p>Your Fashion, news and style guide</p>
-                               <button class="Btn" >Go Now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-            
+            </section>
         </section>
+
+
         <section id="trending-now-container">
             <h1>TRENDING NOW</h1>
 
             <div class="product-container" id="product-container">
 
             </div>
-            
+
             <div class="view-more-container">
                 <button id="viewBtn">View More</button>
             </div>
         </section>
-        
-<!-- ashita code ends -->
+
+        <!-- ashita code ends -->
 
 
 
@@ -911,7 +830,7 @@
 
         </section>
 
-        <section>
+        <footer>
             <div id="footersection">
                 <div>
                     <h4>CUSTOMER CARE</h4>
@@ -1024,15 +943,12 @@
                     <a href="#"><i class="ri-linkedin-fill"></i></a>
                 </div>
             </div>
-        </section>
+        </footer>
 
 
 
 
         <!-- --------------Created by Vikram ends---------------- -->
-
-
-
 
 
 
