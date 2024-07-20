@@ -24,7 +24,7 @@
 
 /* hero section start  */
 
-body{
+body {
     overflow: hidden;
 }
 
@@ -153,6 +153,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .signup-section {
@@ -162,7 +163,9 @@ main {
     padding: 30px;
     font-family: "Questrial", sans-serif;
     border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--ann-color);
+
 }
 
 .signup-section .signup-heading {
@@ -174,10 +177,7 @@ main {
     font-weight: 600;
 }
 
-/* .container {
-    max-width: 700px;
-    margin: auto;
-} */
+
 
 form>div {
     display: flex;
@@ -190,6 +190,7 @@ form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+
 }
 
 form>div:nth-of-type(3) {
@@ -205,13 +206,22 @@ label {
     font-weight: 600;
 }
 
-input[type="text"] , input[type="password"] , input[type="email"] {
+input[type="text"],
+input[type="password"],
+input[type="email"] {
     padding: 10px;
     border: 1px solid #80808065;
     border-radius: 5px;
     font-size: 1rem;
     font-family: "Questrial", sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+}
 
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    border: 1px solid var(--bg-color);
 }
 
 input[type="submit"] {
@@ -241,6 +251,12 @@ textarea {
     border-radius: 5px;
     font-size: 1rem;
     font-family: "Questrial", sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+textarea:focus {
+    border: 1px solid var(--bg-color);
 }
 
 
@@ -316,4 +332,21 @@ textarea {
     .nav-button-image button:nth-of-type(4) {
         display: block;
     }
+
+    form {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    form>div:nth-of-type(3) {
+        grid-row: span 1;
+    }
+
+    form>div:nth-of-type(6) {
+        grid-column: span 1;
+    }
+
+    .signup-section {
+        width: 100%;
+    }
+
 }
