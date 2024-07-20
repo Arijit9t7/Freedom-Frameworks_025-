@@ -1,3 +1,16 @@
+
+const wishlistBtn = document.querySelector(".wishlistBtn");
+
+wishlistBtn.addEventListener("click", () => {
+
+    alert("Product added to wishlist");
+    
+
+    window.location.href = "./wishlist.html";
+});
+
+
+
 // const wishlistBtn = document.getElementById("wishlistBtn");
 // const womenURL = 'https://modesense-data.onrender.com/womenproducts';
 
@@ -29,4 +42,5 @@
 // })
 
 // // Fetch product data from the API
+
 
