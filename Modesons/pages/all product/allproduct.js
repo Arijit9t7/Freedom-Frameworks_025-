@@ -1,22 +1,44 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://modesense-data.onrender.com/womenproducts') 
+    fetch('https://modesense-data.onrender.com/menproducts')
         .then(response => response.json())
         .then(data => {
-            const productsContainer = document.getElementById('products');
+            const productsContainer = document.getElementById('allProduct-container');
             data.forEach(product => {
                 const productElement = document.createElement('div');
                 productElement.className = 'product';
-                productElement.innerHTML = `
-                    <img src="${product.Imagelink}" alt="${product.title}">
-                    <div class="product-details">
-                        <h2>${product.title}</h2>
-                        <p>${product.desc}</p>
-                        <p>₹${product.price} (${product.price / 10}%) to ₹${product.oldprice}</p>
-                        <a href="#">Compare ${product.stores} stores</a>
-                    </div>
-                `;
-                productsContainer.appendChild(productElement);
+                const productImage = document.createElement('div');
+                productImage.className = 'product-image';
+                const productDetails = document.createElement('div');
+                productDetails.className = 'product-details';
+
+                const productTitle = document.createElement('h2');
+                productTitle.textContent = product.title;
+                const productDesc = document.createElement('p');
+                productDesc.textContent = product.desc;
+                const productPrice = document.createElement('span');
+                productPrice.textContent = `${product.price}`;
+                const productOldPrice = document.createElement('span');
+                productOldPrice.textContent = `${product.oldprice}`;
+                
+                let oldPrice = product.oldprice.replace(/₹|,/g, "").trim();
+                let newPrice = product.price.replace(/₹|,/g, "").trim();
+                let oldPriceNumber = Number(oldPrice);
+                let newPriceNumber = Number(newPrice);
+                let discountPercentage = Math.abs(Math.round((oldPriceNumber - newPriceNumber) / newPriceNumber * 100));
+                const productDiscount = document.createElement('span');
+                productDiscount.textContent = `${discountPercentage}% off`;
+
+                const productImageElement = document.createElement('img');
+                productImageElement.src = product.Imagelink;
+
+
+                productImage.appendChild(productImageElement);
+                productDetails.append(productTitle, productDesc, productPrice, productOldPrice, productDiscount);
+
+                productElement.append(productImage, productDetails);
+
+                productsContainer.append(productElement);
             });
         })
         .catch(error => console.error('Error fetching products:', error));
@@ -24,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dropdowns = document.getElementsByClassName("dropdown-btn");
 
     for (let i = 0; i < dropdowns.length; i++) {
-        dropdowns[i].addEventListener("click", function() {
+        dropdowns[i].addEventListener("click", function () {
             this.classList.toggle("active");
             const dropdownContent = this.nextElementSibling;
             if (dropdownContent.style.display === "block") {
@@ -38,13 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const categorySelect = document.getElementById("category-select");
     const sortSelect = document.getElementById("sort-select");
 
-    categorySelect.addEventListener("change", function() {
+    categorySelect.addEventListener("change", function () {
         const selectedCategory = categorySelect.value;
         console.log("Selected category: " + selectedCategory);
         filterProducts(selectedCategory);
     });
 
-    sortSelect.addEventListener("change", function() {
+    sortSelect.addEventListener("change", function () {
         const selectedSort = sortSelect.value;
         console.log("Selected sort: " + selectedSort);
         sortProducts(selectedSort);
@@ -76,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const searchButton = document.getElementById('search-button');
-    searchButton.addEventListener('click', function() {
+    searchButton.addEventListener('click', function () {
         const searchTerm = document.getElementById('search-input').value.toLowerCase();
         const products = document.getElementsByClassName('product');
         Array.from(products).forEach(product => {

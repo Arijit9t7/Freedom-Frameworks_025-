@@ -1,62 +1,67 @@
-let profileBtn = document.getElementById('profileBtn');
-let mainDropdown = document.getElementById('nav-main-dropdown');
-let MainDropdownflag = true;
+// let profileBtn = document.getElementById('profileBtn');
+// let mainDropdown = document.getElementById('nav-main-dropdown');
+// let MainDropdownflag = true;
 
-function showMainDropdown() {
-    if (MainDropdownflag) {
-        mainDropdown.style.display = 'block';
-        MainDropdownflag = false;
+// function showMainDropdown() {
+//     if (MainDropdownflag) {
+//         mainDropdown.style.display = 'block';
+//         MainDropdownflag = false;
+//     }
+//     else {
+//         mainDropdown.style.display = 'none';
+//         MainDropdownflag = true;
+//     }
+// }
+
+let baseUrl = `https://modesense-data.onrender.com`;
+
+document.addEventListener('DOMContentLoaded', () => {
+    let loginBtn = document.getElementById('loginSubmitBtn');
+    if (loginBtn) {
+        loginBtn.addEventListener('click', handleLogin);
+    } else {
+        console.error('Login button not found');
     }
-    else {
-        mainDropdown.style.display = 'none';
-        MainDropdownflag = true;
-    }
-}
-
-
-let baseUrl = `https://modesense-data.onrender.com`
-
-let loginBtn = document.getElementById('loginSubmitBtn');
-let users = JSON.parse(localStorage.getItem('users')) || [];
+});
 
 const handleLogin = async (e) => {
-
     e.preventDefault();
 
     let loginEmail = document.getElementById('loginEmail');
     let loginPassword = document.getElementById('loginPassword');
 
-    // console.log(email.value, password.value);
+    let email = loginEmail.value;
+    let password = loginPassword.value;
 
-    if (loginEmail == "" && loginPassword === '') {
-        alert('Fill all the field')
+    if (email.trim() === '' || password.trim() === '') {
+        alert('Fill all the fields');
+    } else {
+        try {
+            let response = await fetch(`${baseUrl}/users`);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            let res = await response.json();
+
+            let usersArr = res.filter((user) => {
+                return user.email === email && user.password === password;
+            });
+
+            if (usersArr.length === 0) {
+                alert('Please Register First');
+            } else {
+                alert('Login Successful');
+                localStorage.setItem('isLoggedinUser', JSON.stringify({
+                    id: usersArr[0].id,
+                    user: usersArr[0]
+                }));
+                window.location.href = "../../index.html";
+
+            }
+
+        } catch (error) {
+            alert('Error during login. Please try again later.');
+        }
     }
-    else {
+};
 
-        let email = loginEmail.value
-        let password = loginPassword.value
-
-        fetch(`${baseUrl}/users`)
-            .then((res) => res.json())
-            .then((res) => {
-                let usersArr = res.filter((ele) => {
-                    return ele.email == email && ele.password == password
-                })
-
-                if (usersArr.length == 0) {
-                    alert('Please Register First')
-                }
-                else {
-                    alert('Login Successfull')
-                    localStorage.setItem('isLogged', JSON.stringify({
-                        id: usersArr[0].id,
-                        usersArr
-                    }))
-                    window.location.href = "../../index.html"
-                }
-            })
-
-    }
-}
-
-loginBtn.addEventListener('click', handleLogin);
