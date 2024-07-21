@@ -8,6 +8,55 @@ let filterTheDataByPrice = document.getElementById("filterTheDataByPrice");
 
 let allProductArr = [kidurl, menurl, womenurl, homeurl, beautyurl];
 
+
+
+let userCart = document.getElementById("userCart");
+let userWishlist = document.getElementById("userWishlist");
+
+userCart.addEventListener("click", () => {
+  if (localStorage.getItem('isLoggedinUser')) {
+    window.location.href = "../cart/cart.html";
+  } else {
+    alert("Please login first");
+  }
+});
+
+userWishlist.addEventListener("click", () => {
+  if (localStorage.getItem('isLoggedinUser')) {
+    window.location.href = "../wishlist/wishlist.html";
+  } else {
+    alert("Please login first");
+  }
+});
+
+let loginRedirect = document.getElementById("loginRedirect");
+let logoutRedirect = document.getElementById("logoutRedirect");
+// let signUpRedirectBlock = document.getElementById("signUpRedirectBlock");
+let loggedUsername = document.getElementById("loggedUsername");
+// let userNameBlock = document.getElementById("userNameBlock");
+
+if (localStorage.getItem('isLoggedinUser')) {
+  let username = JSON.parse(localStorage.getItem('isLoggedinUser'));
+  // console.log(username.user.name);
+  loginRedirect.style.display = "none";
+  logoutRedirect.style.display = "block";
+  // signUpRedirectBlock.style.display = "none";
+  // userNameBlock.style.display = "block";
+  // loggedUsername.innerHTML = username.user.name;
+}
+
+logoutRedirect.addEventListener("click", () => {
+  localStorage.removeItem('isLoggedinUser');
+  loginRedirect.style.display = "block";
+  logoutRedirect.style.display = "none";
+  window.location.href = "../../index.html";
+});
+
+
+
+
+
+
 let productsContainer = document.getElementById("allProduct-container");
 const ShowData = (data) => {
   data.forEach((product) => {
