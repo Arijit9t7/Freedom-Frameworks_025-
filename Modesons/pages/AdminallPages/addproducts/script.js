@@ -22,7 +22,7 @@ let handleSubmit = (event)=>{
     category
   }
   console.log(obj)
-  let newurl = `https://modesense-data.onrender.com/${category}`
+  let newurl = `https://traveling-ubiquitous-study.glitch.me/${category}`
   fetch(newurl, {
     method: "POST",
     headers: {

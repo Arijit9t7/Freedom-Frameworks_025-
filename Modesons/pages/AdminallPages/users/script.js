@@ -1,7 +1,7 @@
 let searchinput = document.getElementById("searchinput");
 let searchbutton = document.getElementById("searchbutton");
 let usersData = document.getElementById("tabletypedata");
-let usersurl = "https://modesense-data.onrender.com/users";
+let usersurl = "https://traveling-ubiquitous-study.glitch.me/users";
 
 let fetchData = async (URL) => {
   let res = await fetch(URL);
@@ -69,7 +69,7 @@ let ShowData = async (URL) => {
 };
 
 let handleDelete = (value) => {
-  let newurl = `https://modesense-data.onrender.com/users/${value}`;
+  let newurl = `https://traveling-ubiquitous-study.glitch.me/users/${value}`;
   fetch(newurl, {
     method: "DELETE",
   }).then(() =>{
@@ -79,7 +79,7 @@ let handleDelete = (value) => {
 
 let handleSubmit = (value, inputvalue, selectvalue) => {
   if (inputvalue && selectvalue) {
-    let newurl = `https://modesense-data.onrender.com/users/${value}`;
+    let newurl = `https://traveling-ubiquitous-study.glitch.me/users/${value}`;
     console.log(newurl);
     let requestBody = {};
     requestBody[selectvalue] = inputvalue;

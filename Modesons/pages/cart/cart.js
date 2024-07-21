@@ -2,7 +2,7 @@ let logoutRedirect = document.getElementById("logoutRedirect")
 let cartItems = document.getElementById("cart-items")
 let currentUser = JSON.parse(localStorage.getItem('isLoggedinUser'))
 let idofCurrentUser  = currentUser.user.id
-let URL = "https://modesense-data.onrender.com/users"
+let URL = "https://traveling-ubiquitous-study.glitch.me/users"
 
 
 let fetchData = async (URL)=>{

@@ -4,13 +4,13 @@ let totalOrdercount = document.getElementById("totalordercount");
 let dataContainer = document.getElementById("tabletypedata");
 let searchinput = document.getElementById("searchinput");
 let searchbutton = document.getElementById("searchbutton");
-let kidurl = "https://modesense-data.onrender.com/kidsproducts";
-let beautyurl = "https://modesense-data.onrender.com/beautyproducts";
-let homeurl = "https://modesense-data.onrender.com/homeproducts";
-let menurl = "https://modesense-data.onrender.com/menproducts";
-let womenurl = "https://modesense-data.onrender.com/womenproducts";
-let usersurl = "https://modesense-data.onrender.com/users";
-let ordersurl = "https://modesense-data.onrender.com/Orders";
+let kidurl = "https://traveling-ubiquitous-study.glitch.me/kidsproducts";
+let beautyurl = "https://traveling-ubiquitous-study.glitch.me/beautyproducts";
+let homeurl = "https://traveling-ubiquitous-study.glitch.me/homeproducts";
+let menurl = "https://traveling-ubiquitous-study.glitch.me/menproducts";
+let womenurl = "https://traveling-ubiquitous-study.glitch.me/womenproducts";
+let usersurl = "https://traveling-ubiquitous-study.glitch.me/users";
+let ordersurl = "https://traveling-ubiquitous-study.glitch.me/Orders";
 let dataUrl = [kidurl, beautyurl, homeurl, menurl, womenurl];
 
 let fetchData = async (URL) => {

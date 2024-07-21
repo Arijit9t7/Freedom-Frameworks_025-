@@ -1,13 +1,14 @@
 let searchinput = document.getElementById("searchinput");
 let searchbutton = document.getElementById("searchbutton");
 let usersData = document.getElementById("tabletypedata");
-let usersurl = "https://modesense-data.onrender.com/users";
-let kidurl = "https://modesense-data.onrender.com/kidsproducts";
-let beautyurl = "https://modesense-data.onrender.com/beautyproducts";
-let homeurl = "https://modesense-data.onrender.com/homeproducts";
-let menurl = "https://modesense-data.onrender.com/menproducts";
-let womenurl = "https://modesense-data.onrender.com/womenproducts";
+let usersurl = "https://traveling-ubiquitous-study.glitch.me/users";
+let kidurl = "https://traveling-ubiquitous-study.glitch.me/kidsproducts";
+let beautyurl = "https://traveling-ubiquitous-study.glitch.me/beautyproducts";
+let homeurl = "https://traveling-ubiquitous-study.glitch.me/homeproducts";
+let menurl = "https://traveling-ubiquitous-study.glitch.me/menproducts";
+let womenurl = "https://traveling-ubiquitous-study.glitch.me/womenproducts";
 let dataUrl = [kidurl, beautyurl, homeurl, menurl, womenurl];
+
 
 let fetchData = async (URL) => {
   let res = await fetch(URL);
@@ -75,7 +76,7 @@ let ShowData = (searchdata) => {
 };
 
 let handleDelete = (value,categoryf) => {
-  let newurl = `https://modesense-data.onrender.com/${categoryf}/${value}`;
+  let newurl = `https://traveling-ubiquitous-study.glitch.me/${categoryf}/${value}`;
   fetch(newurl, {
     method: "DELETE",
   }).then(() => {
@@ -84,7 +85,7 @@ let handleDelete = (value,categoryf) => {
 };
 let handleSubmit = (value, inputvalue, selectvalue,categoryf) => {
   if (inputvalue && selectvalue) {
-    let newurl = `https://modesense-data.onrender.com/${categoryf}/${value}`;
+    let newurl = `https://traveling-ubiquitous-study.glitch.me/${categoryf}/${value}`;
     let requestBody = {};
     requestBody[selectvalue] = inputvalue;
     fetch(newurl, {
