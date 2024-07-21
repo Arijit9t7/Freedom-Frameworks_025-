@@ -137,8 +137,8 @@ The ModeSens website clone aims to replicate the key functionalities and user ex
 - ![alt text](<freedom-frameworks-025.vercel.app_pages_all%20product_allproduct.html (2).png>)
 
 # Beauty
--
--
+- The Beauty Section is dedicated to offering a curated selection of beauty products, including skincare, makeup, and haircare items.   
+- This section provides users with access to a range of high-quality beauty products, tailored to enhance their personal care routines.
 
 
 # Wishlist 
@@ -150,7 +150,7 @@ The ModeSens website clone aims to replicate the key functionalities and user ex
 - Cart Overview: Displays a summary of all items added to the cart, including product images, descriptions, prices, and quantities.
 - Proceed to Checkout: A button to navigate to the checkout page and complete the purchase.
 
-# Payment option
+# Payment Checkout
 - Payment Options: Secure payment gateways for processing transactions.
 - Order Confirmation: Confirmation of the order with details for tracking and delivery.
 
