@@ -4,6 +4,9 @@ Project for modesens Clone website.
 # ModeSens
 The ModeSens website clone aims to replicate the key functionalities and user experience of the original ModeSens platform, focusing on delivering a seamless and efficient shopping experience. The clone includes two primary features: the product description page and the wishlist page.
 
+# Project Type
+- Frontend | Backend
+
 # Features 
 - Sign-up and sigin user.
 - Admin Section
@@ -35,4 +38,8 @@ The ModeSens website clone aims to replicate the key functionalities and user ex
 - Website also have mens page wher mens can search on differentnt product and do shooping .
 - All the product are shown with the help carausel in unique the eye catching Mannner .
   
+# Kids
+-Category can be sort according to men , women , kids in kids page .
+-If user wnat to do shopping with the hepl of sorting can do that thing also .
+
 
