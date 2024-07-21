@@ -1,5 +1,5 @@
 
-let baseUrl = `https://modesense-data.onrender.com`;
+let baseUrl = `https://traveling-ubiquitous-study.glitch.me`;
 
 let signupBtn = document.getElementById('signupSubmitBtn');
 const handleSignup = async (e) => {

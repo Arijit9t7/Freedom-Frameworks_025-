@@ -1,5 +1,5 @@
 
-let baseUrl = `https://modesense-data.onrender.com`;
+let baseUrl = `https://traveling-ubiquitous-study.glitch.me`;
 
 let productImage = document.getElementById('product-image');
 let productTitle = document.getElementById('product-title');
@@ -55,7 +55,6 @@ const handleAddToCart = async () => {
     "quantity": 1
   }
 
-  // console.log(`${baseUrl}/users/${isLoggedInUserData.user.id}`)
 
   let userCartData = await fetchUserData()
   console.log(userCartData)
@@ -106,7 +105,42 @@ const handleAddToCart = async () => {
 
 }
 
-
 addToCartBtn.addEventListener('click', handleAddToCart);
+
+let whishlistBtn = document.getElementById('whishlistBtn');
+
+const handleAddToWhishlist = async () => {
+
+  let obj = {
+    "id": storedProduct.id,
+    "Imagelink": storedProduct.Imagelink,
+    "title": storedProduct.title,
+    "desc": storedProduct.desc,
+    "oldprice": storedProduct.oldprice,
+    "price": storedProduct.price,
+    "stores": storedProduct.stores,
+    "category": storedProduct.category,
+    "quantity": 1
+  }
+
+  // console.log(`${baseUrl}/users/${isLoggedInUserData.user.id}`)
+
+  let userCartData = await fetchUserData()
+  console.log(userCartData)
+
+  await fetch(`${baseUrl}/users/${isLoggedInUserData.user.id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      wishlist: [...userCartData.wishlist, obj]
+    })
+  })
+
+
+}
+
+whishlistBtn.addEventListener('click', handleAddToWhishlist);
 
 

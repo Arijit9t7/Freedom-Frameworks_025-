@@ -7,6 +7,26 @@ let signUpRedirectBlock = document.getElementById("signUpRedirectBlock");
 let loggedUsername = document.getElementById("loggedUsername");
 let userNameBlock = document.getElementById("userNameBlock");
 
+let userCart = document.getElementById("userCart");
+let userWishlist = document.getElementById("userWishlist");
+
+userCart.addEventListener("click", () => {
+  if (localStorage.getItem('isLoggedinUser')) {
+    window.location.href = "./pages/cart/cart.html";
+  } else {
+    alert("Please login first");
+  }
+});
+
+userWishlist.addEventListener("click", () => {
+  if (localStorage.getItem('isLoggedinUser')) {
+    window.location.href = "./pages/wishlist/wishlist.html";
+  } else {
+    alert("Please login first");
+  }
+});
+
+
 
 
 if (localStorage.getItem('isLoggedinUser')) {

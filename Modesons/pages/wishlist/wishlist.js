@@ -1,3 +1,5 @@
+let baseUrl = `https://traveling-ubiquitous-study.glitch.me`;
+
 let addToCartBtns = document.querySelectorAll(".addToCartBtn");
 
 addToCartBtns.forEach(btn => {
@@ -9,6 +11,7 @@ addToCartBtns.forEach(btn => {
 
 let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 let container = document.getElementById("container");
+
 let wishlistCards=document.getElementById("wishlist-cards")
 let wishlistCard=document.getElementById("wishlist-card")
 let cardTitle=document.getElementById("wishlist-card-title")
