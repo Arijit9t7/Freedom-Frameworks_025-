@@ -2,7 +2,6 @@ let loginRedirect = document.getElementById("loginRedirect");
 let signupRedirect = document.getElementById("signUpRedirect");
 let logoutRedirect = document.getElementById("logoutRedirect");
 
-
 let signUpRedirectBlock = document.getElementById("signUpRedirectBlock");
 let loggedUsername = document.getElementById("loggedUsername");
 let userNameBlock = document.getElementById("userNameBlock");
@@ -15,7 +14,7 @@ let userWishlistDP = document.getElementById("userWishlistDropdown");
 let userOrderDP = document.getElementById("userOrderDropdown");
 
 userCart.addEventListener("click", () => {
-  if (localStorage.getItem('isLoggedinUser')) {
+  if (localStorage.getItem("isLoggedinUser")) {
     window.location.href = "./pages/cart/cart.html";
   } else {
     alert("Please login first");
@@ -23,7 +22,7 @@ userCart.addEventListener("click", () => {
 });
 
 userWishlist.addEventListener("click", () => {
-  if (localStorage.getItem('isLoggedinUser')) {
+  if (localStorage.getItem("isLoggedinUser")) {
     window.location.href = "./pages/wishlist/wishlist.html";
   } else {
     alert("Please login first");
@@ -31,7 +30,7 @@ userWishlist.addEventListener("click", () => {
 });
 
 userCartDP.addEventListener("click", () => {
-  if (localStorage.getItem('isLoggedinUser')) {
+  if (localStorage.getItem("isLoggedinUser")) {
     window.location.href = "./pages/cart/cart.html";
   } else {
     alert("Please login first");
@@ -39,7 +38,7 @@ userCartDP.addEventListener("click", () => {
 });
 
 userWishlistDP.addEventListener("click", () => {
-  if (localStorage.getItem('isLoggedinUser')) {
+  if (localStorage.getItem("isLoggedinUser")) {
     window.location.href = "./pages/wishlist/wishlist.html";
   } else {
     alert("Please login first");
@@ -47,17 +46,15 @@ userWishlistDP.addEventListener("click", () => {
 });
 
 userOrderDP.addEventListener("click", () => {
-  if (localStorage.getItem('isLoggedinUser')) {
-    window.location.href = "./pages/wishlist/wishlist.html";
+  if (localStorage.getItem("isLoggedinUser")) {
+    window.location.href = "./pages/orders/orders.html";
   } else {
     alert("Please login first");
   }
 });
 
-
-
-if (localStorage.getItem('isLoggedinUser')) {
-  let username = JSON.parse(localStorage.getItem('isLoggedinUser'));
+if (localStorage.getItem("isLoggedinUser")) {
+  let username = JSON.parse(localStorage.getItem("isLoggedinUser"));
   // console.log(username.user.name);
   loginRedirect.style.display = "none";
   logoutRedirect.style.display = "block";
@@ -67,7 +64,7 @@ if (localStorage.getItem('isLoggedinUser')) {
 }
 
 logoutRedirect.addEventListener("click", () => {
-  localStorage.removeItem('isLoggedinUser');
+  localStorage.removeItem("isLoggedinUser");
   loginRedirect.style.display = "block";
   logoutRedirect.style.display = "none";
   window.location.href = "./index.html";
@@ -76,7 +73,6 @@ logoutRedirect.addEventListener("click", () => {
 loginRedirect.addEventListener("click", () => {
   window.location.href = "./pages/login/login.html";
 });
-
 
 let profileBtn = document.getElementById("profileBtn");
 let mainDropdown = document.getElementById("nav-main-dropdown");
@@ -116,7 +112,7 @@ signupRedirect.addEventListener("click", () => {
 
 const handleCategory = (type) => {
   console.log(type);
-}
+};
 // arijit code starts
 
 function showSection(section) {
@@ -222,20 +218,54 @@ var swiper = new Swiper(".categorySwiper", {
     },
     1024: {
       slidesPerView: 4,
-    }
-
-  }
+    },
+  },
 });
 
-
-
 const products = [
-  { id: 1, name: "ULLA JOHNSON", description: "Asilia Long Sleeve Maxi Dress In Pristine", price: "$39.99", image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTjJawpCSJfXqquGws923wOES3pgNyMRBlVUIQ_UndaT46kfj6p21NEBUfrrDM6e0ndHADjBGIEV0HW-oRIQmEjc6HWiLwBQxfElO0DobdU" },
-  { id: 2, name: "CINQ A SEPT", description: "Cinq A Sept Siv Denim Belted Mini Dress In Indigo", price: "$39.99", image: "./images/carousel2/product2.jpg" },
-  { id: 3, name: "FRAME", description: "Danube Denim In Danube Medium Indigo Wash", price: "$49.99", image: "./images/carousel2/product3.jpg" },
-  { id: 4, name: "VERONICA BEARD", description: "Magnolia Two-tone Sunburst Knit Midi Dress In Gild", price: "$59.99", image: "./images/carousel2/product4.jpg" },
-  { id: 5, name: "ULLA JOHNSON", description: "Frankie Pattern Short Sleeve Crop Sweater In Confetti", price: "$69.99", image: "./images/carousel2/product5.jpg" },
-  { id: 6, name: "ACNE STUDIOS", description: "Logo Printed Crewneck Pattern T Shirt In Pink", price: "$79.99", image: "./images/carousel2/product6.jpg" }
+  {
+    id: 1,
+    name: "ULLA JOHNSON",
+    description: "Asilia Long Sleeve Maxi Dress In Pristine",
+    price: "$39.99",
+    image:
+      "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTjJawpCSJfXqquGws923wOES3pgNyMRBlVUIQ_UndaT46kfj6p21NEBUfrrDM6e0ndHADjBGIEV0HW-oRIQmEjc6HWiLwBQxfElO0DobdU",
+  },
+  {
+    id: 2,
+    name: "CINQ A SEPT",
+    description: "Cinq A Sept Siv Denim Belted Mini Dress In Indigo",
+    price: "$39.99",
+    image: "./images/carousel2/product2.jpg",
+  },
+  {
+    id: 3,
+    name: "FRAME",
+    description: "Danube Denim In Danube Medium Indigo Wash",
+    price: "$49.99",
+    image: "./images/carousel2/product3.jpg",
+  },
+  {
+    id: 4,
+    name: "VERONICA BEARD",
+    description: "Magnolia Two-tone Sunburst Knit Midi Dress In Gild",
+    price: "$59.99",
+    image: "./images/carousel2/product4.jpg",
+  },
+  {
+    id: 5,
+    name: "ULLA JOHNSON",
+    description: "Frankie Pattern Short Sleeve Crop Sweater In Confetti",
+    price: "$69.99",
+    image: "./images/carousel2/product5.jpg",
+  },
+  {
+    id: 6,
+    name: "ACNE STUDIOS",
+    description: "Logo Printed Crewneck Pattern T Shirt In Pink",
+    price: "$79.99",
+    image: "./images/carousel2/product6.jpg",
+  },
   // ,
   // { id: 7, name: "VERONICA BEARD", description: "Dali Leather Platform Slide Sandals In Beige", price: "$89.99", image: "./images/carousel2/product7.jpg" },
   // { id: 8, name: "BALMAIN", description: "Monogram Jacquard Dress In Ggd White/ Navy", price: "$99.99", image: "./images/carousel2/product8.jpg" },
@@ -244,17 +274,17 @@ const products = [
 let productsDisplayed = 3;
 
 function renderProducts() {
-  const productContainer = document.getElementById('product-container');
-  productContainer.innerHTML = '';
+  const productContainer = document.getElementById("product-container");
+  productContainer.innerHTML = "";
 
   for (let i = 0; i < productsDisplayed; i++) {
     if (i >= products.length) break;
 
     const product = products[i];
-    const productCard = document.createElement('div');
-    productCard.classList.add('product-card');
+    const productCard = document.createElement("div");
+    productCard.classList.add("product-card");
 
-    const originalPrice = parseFloat(product.price.replace('$', '')) * 1.25;
+    const originalPrice = parseFloat(product.price.replace("$", "")) * 1.25;
     const originalPriceFormatted = `$${originalPrice.toFixed(2)}`;
 
     productCard.innerHTML = `
@@ -270,7 +300,7 @@ function renderProducts() {
           <button>Add to Cart</button>
       `;
 
-    productCard.addEventListener('click', () => {
+    productCard.addEventListener("click", () => {
       navigateToProductDescription(product.id);
     });
 
@@ -282,17 +312,16 @@ function navigateToProductDescription(productId) {
   window.location.href = `./pages/all product/allproduct.html`;
 }
 
-document.getElementById('viewBtn').addEventListener('click', () => {
+document.getElementById("viewBtn").addEventListener("click", () => {
   productsDisplayed += 4;
   renderProducts();
 
   if (productsDisplayed >= products.length) {
-    document.getElementById('viewBtn').style.display = 'none';
+    document.getElementById("viewBtn").style.display = "none";
   }
 });
 
 renderProducts();
-
 
 //........................Ashita code ends....................
 
