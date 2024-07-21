@@ -10,6 +10,10 @@ let userNameBlock = document.getElementById("userNameBlock");
 let userCart = document.getElementById("userCart");
 let userWishlist = document.getElementById("userWishlist");
 
+let userCartDP = document.getElementById("userCartDropdown");
+let userWishlistDP = document.getElementById("userWishlistDropdown");
+let userOrderDP = document.getElementById("userOrderDropdown");
+
 userCart.addEventListener("click", () => {
   if (localStorage.getItem('isLoggedinUser')) {
     window.location.href = "./pages/cart/cart.html";
@@ -26,6 +30,29 @@ userWishlist.addEventListener("click", () => {
   }
 });
 
+userCartDP.addEventListener("click", () => {
+  if (localStorage.getItem('isLoggedinUser')) {
+    window.location.href = "./pages/cart/cart.html";
+  } else {
+    alert("Please login first");
+  }
+});
+
+userWishlistDP.addEventListener("click", () => {
+  if (localStorage.getItem('isLoggedinUser')) {
+    window.location.href = "./pages/wishlist/wishlist.html";
+  } else {
+    alert("Please login first");
+  }
+});
+
+userOrderDP.addEventListener("click", () => {
+  if (localStorage.getItem('isLoggedinUser')) {
+    window.location.href = "./pages/wishlist/wishlist.html";
+  } else {
+    alert("Please login first");
+  }
+});
 
 
 
