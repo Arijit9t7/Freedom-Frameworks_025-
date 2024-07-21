@@ -2,18 +2,18 @@ let logoutRedirect = document.getElementById("logoutRedirect")
 let cartItems = document.getElementById("cart-items")
 let currentUser = JSON.parse(localStorage.getItem('isLoggedinUser'))
 let idofCurrentUser  = currentUser.user.id
-let URL = "https://traveling-ubiquitous-study.glitch.me/users"
+let baseURL = "https://traveling-ubiquitous-study.glitch.me/users"
 
 
-let fetchData = async (URL)=>{
-  let res = await fetch(URL)
+let fetchData = async (baseURL)=>{
+  let res = await fetch(baseURL)
   let data = await res.json()
   return data
 }
 
 
-const showData = async (URL)=>{
-  let newurl = `${URL}/1`
+const showData = async (baseURL)=>{
+  let newurl = `${baseURL}/${idofCurrentUser}`
   cartItems.innerHTML = ""
   let data = await fetchData(newurl)
   data.cart.forEach((ele)=>{
@@ -39,7 +39,7 @@ const showData = async (URL)=>{
     let cartCardbtnminus = document.createElement("button")
     cartCardbtnminus.innerText = "-"
     let countOfProduct = document.createElement("span")
-    countOfProduct.innerText = ele.count
+    countOfProduct.innerText = ele.quantity
     let cartCardbtnplus = document.createElement("button")
     cartCardbtnplus.innerText = "+"
     cartCardbtn.append(cartCardbtnminus,countOfProduct,cartCardbtnplus)
@@ -63,7 +63,7 @@ const showData = async (URL)=>{
   })
 }
 
-showData(URL)
+showData(baseURL)
 
 
 

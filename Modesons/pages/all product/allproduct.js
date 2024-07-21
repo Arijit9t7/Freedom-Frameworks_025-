@@ -1,12 +1,12 @@
-let kidsUrl = `https://modesense-data.onrender.com/kidsproducts`;
-let mensUrl = `https://modesense-data.onrender.com/menproducts`;
-let womenUrl = `https://modesense-data.onrender.com/womenproducts`;
-let homeUrl = `https://modesense-data.onrender.com/homeproducts`;
-let beautyUrl = `https://modesense-data.onrender.com/beautyproducts`;
+let kidurl = "https://traveling-ubiquitous-study.glitch.me/kidsproducts";
+let beautyurl = "https://traveling-ubiquitous-study.glitch.me/beautyproducts";
+let homeurl = "https://traveling-ubiquitous-study.glitch.me/homeproducts";
+let menurl = "https://traveling-ubiquitous-study.glitch.me/menproducts";
+let womenurl = "https://traveling-ubiquitous-study.glitch.me/womenproducts";
 let categoryWiseProduct = document.getElementById("categoryWiseProduct");
 let filterTheDataByPrice = document.getElementById("filterTheDataByPrice");
 
-let allProductArr = [kidsUrl, mensUrl, womenUrl, homeUrl, beautyUrl];
+let allProductArr = [kidurl, menurl, womenurl, homeurl, beautyurl];
 
 let productsContainer = document.getElementById("allProduct-container");
 const ShowData = (data) => {

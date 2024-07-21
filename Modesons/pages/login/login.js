@@ -13,7 +13,7 @@
 //     }
 // }
 
-let baseUrl = `https://modesense-data.onrender.com`;
+let baseUrl = `https://traveling-ubiquitous-study.glitch.me`;
 
 document.addEventListener('DOMContentLoaded', () => {
     let loginBtn = document.getElementById('loginSubmitBtn');
