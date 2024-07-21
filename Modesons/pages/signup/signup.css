@@ -25,7 +25,7 @@
 /* hero section start  */
 
 body {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 header {
@@ -149,7 +149,6 @@ nav {
 
 main {
     /* padding-top: 100px; */
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -160,6 +159,7 @@ main {
     width: 1200px;
     margin: auto;
     /* border: 1px solid rgba(0, 0, 0, 0.332); */
+    margin: 100px 0px;
     padding: 30px;
     font-family: "Questrial", sans-serif;
     border-radius: 6px;

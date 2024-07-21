@@ -43,67 +43,41 @@ let addToCartBtn = document.getElementById('addToCartBtn');
 
 const handleAddToCart = async () => {
 
-  let obj = {
-    "id": storedProduct.id,
-    "Imagelink": storedProduct.Imagelink,
-    "title": storedProduct.title,
-    "desc": storedProduct.desc,
-    "oldprice": storedProduct.oldprice,
-    "price": storedProduct.price,
-    "stores": storedProduct.stores,
-    "category": storedProduct.category,
-    "quantity": 1
+  if (localStorage.getItem('isLoggedinUser')) {
+    let obj = {
+      "id": storedProduct.id,
+      "Imagelink": storedProduct.Imagelink,
+      "title": storedProduct.title,
+      "desc": storedProduct.desc,
+      "oldprice": storedProduct.oldprice,
+      "price": storedProduct.price,
+      "stores": storedProduct.stores,
+      "category": storedProduct.category,
+      "quantity": 1
+    }
+
+
+    let userCartData = await fetchUserData()
+    console.log(userCartData)
+
+    await fetch(`${baseUrl}/users/${isLoggedInUserData.user.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        cart: [...userCartData.cart, obj]
+      })
+    }).then(() => {
+      alert('Product added to Cart');
+    })
+  } else {
+    alert('Please login first');
   }
 
 
-  let userCartData = await fetchUserData()
-  console.log(userCartData)
-
-  await fetch(`${baseUrl}/users/${isLoggedInUserData.user.id}`, {
-    method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      cart: [...userCartData.cart, obj]
-    })
-  }).then(() => {
-    alert('Product added to Cart');
-  })
-
-  // console.log(obj)
 
 
-  // let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-  // let product = JSON.parse(localStorage.getItem('singleProduct'));
-
-  // let productExists = cartItems.find(item => item.id === product.id);
-
-  // if (productExists) {
-  //   cartItems = cartItems.map(item => {
-  //     if (item.id === product.id) {
-  //       item.quantity += 1;
-  //     }
-  //     return item;
-  //   });
-  // } else {
-  //   product.quantity = 1;
-  //   cartItems.push(product);
-  // }
-
-  // localStorage.setItem('cartItems', JSON.stringify(cartItems));
-  // alert('Product added to cart');
-
-  // {
-  //   "id": "78679",
-  //   "Imagelink": "https://m.media-amazon.com/images/I/31Tv84BGrAL._AC_UL480_FMwebp_QL65_.jpg",
-  //   "title": "MONCLER",
-  //   "desc": "Kids' Logo-patch Ruffled Polo Dress In Pastel Pink",
-  //   "oldprice": "20500",
-  //   "price": "₹19344",
-  //   "stores": "Compare 2 stores",
-  //   "category": "kidsproducts"
-  // },
 
 }
 
@@ -113,35 +87,38 @@ let whishlistBtn = document.getElementById('whishlistBtn');
 
 const handleAddToWhishlist = async () => {
 
-  let obj = {
-    "id": storedProduct.id,
-    "Imagelink": storedProduct.Imagelink,
-    "title": storedProduct.title,
-    "desc": storedProduct.desc,
-    "oldprice": storedProduct.oldprice,
-    "price": storedProduct.price,
-    "stores": storedProduct.stores,
-    "category": storedProduct.category,
-    "quantity": 1
-  }
+  if (localStorage.getItem('isLoggedinUser')) {
 
-  // console.log(`${baseUrl}/users/${isLoggedInUserData.user.id}`)
+    let obj = {
+      "id": storedProduct.id,
+      "Imagelink": storedProduct.Imagelink,
+      "title": storedProduct.title,
+      "desc": storedProduct.desc,
+      "oldprice": storedProduct.oldprice,
+      "price": storedProduct.price,
+      "stores": storedProduct.stores,
+      "category": storedProduct.category,
+      "quantity": 1
+    }
 
-  let userCartData = await fetchUserData()
-  console.log(userCartData)
+    let userCartData = await fetchUserData()
+    console.log(userCartData)
 
-  await fetch(`${baseUrl}/users/${isLoggedInUserData.user.id}`, {
-    method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      wishlist: [...userCartData.wishlist, obj]
+    await fetch(`${baseUrl}/users/${isLoggedInUserData.user.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        wishlist: [...userCartData.wishlist, obj]
+      })
+    }).then(() => {
+      alert('Product added to wishlist');
     })
-  }).then(() => {
-    alert('Product added to wishlist');
-  })
 
+  } else {
+    alert('Please login first');
+  }
 
 }
 
