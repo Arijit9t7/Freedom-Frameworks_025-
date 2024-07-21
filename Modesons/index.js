@@ -208,12 +208,13 @@ const products = [
   { id: 3, name: "FRAME", description: "Danube Denim In Danube Medium Indigo Wash", price: "$49.99", image: "./images/carousel2/product3.jpg" },
   { id: 4, name: "VERONICA BEARD", description: "Magnolia Two-tone Sunburst Knit Midi Dress In Gild", price: "$59.99", image: "./images/carousel2/product4.jpg" },
   { id: 5, name: "ULLA JOHNSON", description: "Frankie Pattern Short Sleeve Crop Sweater In Confetti", price: "$69.99", image: "./images/carousel2/product5.jpg" },
-  { id: 6, name: "ACNE STUDIOS", description: "Logo Printed Crewneck Pattern T Shirt In Pink", price: "$79.99", image: "./images/carousel2/product6.jpg" },
-  { id: 7, name: "VERONICA BEARD", description: "Dali Leather Platform Slide Sandals In Beige", price: "$89.99", image: "./images/carousel2/product7.jpg" },
-  { id: 8, name: "BALMAIN", description: "Monogram Jacquard Dress In Ggd White/ Navy", price: "$99.99", image: "./images/carousel2/product8.jpg" },
+  { id: 6, name: "ACNE STUDIOS", description: "Logo Printed Crewneck Pattern T Shirt In Pink", price: "$79.99", image: "./images/carousel2/product6.jpg" }
+  // ,
+  // { id: 7, name: "VERONICA BEARD", description: "Dali Leather Platform Slide Sandals In Beige", price: "$89.99", image: "./images/carousel2/product7.jpg" },
+  // { id: 8, name: "BALMAIN", description: "Monogram Jacquard Dress In Ggd White/ Navy", price: "$99.99", image: "./images/carousel2/product8.jpg" },
 ];
 
-let productsDisplayed = 4;
+let productsDisplayed = 3;
 
 function renderProducts() {
   const productContainer = document.getElementById('product-container');
