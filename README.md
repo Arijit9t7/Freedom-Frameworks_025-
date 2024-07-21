@@ -108,8 +108,12 @@ The ModeSens website clone aims to replicate the key functionalities and user ex
 - ![alt text](127.0.0.1_5501_Freedom-Frameworks_025-_Modesons_pages_login_login.html.png)
 
 # Admin Page
-- Login Id - admin@gmail.com, Password- admin.
-- Admin Can add product and can remove the product through this page
+- Admin Credentials: Email: admin@gmail.com, Password: admin.
+- Dashboard Page: Overview of key metrics and recent activities.
+- Add Products Page: Interface for admins to add new products to the inventory.
+- Manage Products Page: Tools for updating or removing existing products.
+- Products Page: View all products available in the inventory.
+- User Page: Manage user accounts and their permissions.
 - ![alt text](<Screenshot 2024-07-21 181106.png>)
 
 # Home page 
@@ -131,6 +135,30 @@ The ModeSens website clone aims to replicate the key functionalities and user ex
 -Category can be sort according to men , women , kids in kids page .
 -If user wnat to do shopping with the hepl of sorting can do that thing also .
 - ![alt text](<freedom-frameworks-025.vercel.app_pages_all%20product_allproduct.html (2).png>)
+
+# Beauty
+-
+-
+
+
+# Wishlist 
+- Product Thumbnails: Displays saved products with images, brief descriptions, and prices.
+- Quick Actions: Options to move items to the cart, remove them from the wishlist, or share the wishlist with others.
+- User-Friendly Interface: Easy navigation and management of wishlist items.
+
+# Add to cart
+- Cart Overview: Displays a summary of all items added to the cart, including product images, descriptions, prices, and quantities.
+- Proceed to Checkout: A button to navigate to the checkout page and complete the purchase.
+
+# Payment option
+- Payment Options: Secure payment gateways for processing transactions.
+- Order Confirmation: Confirmation of the order with details for tracking and delivery.
+
+# Orders Page
+- Order History: Displays a list of past orders with details such as order date, product information, total amount, and order status.
+- Order Tracking: Provides tracking information for shipped orders.
+
+
 
 
 
