@@ -1,8 +1,7 @@
 # Freedom-Frameworks_025-
 Project for modesens website 
 # ModeSens
-ModeSens is your fashion shopping assistant for the smart and informed. Established in 2015, ModeSens is led by a team of industry experts who developed a solution to the disconnected and crowded online shopping experience.
-
+The ModeSens website clone aims to replicate the key functionalities and user experience of the original ModeSens platform, focusing on delivering a seamless and efficient shopping experience. The clone includes two primary features: the product description page and the wishlist page.
 
 # Features
 - Login and SignUp Page
