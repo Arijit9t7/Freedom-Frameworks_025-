@@ -150,6 +150,11 @@ The ModeSens website clone aims to replicate the key functionalities and user ex
 - Cart Overview: Displays a summary of all items added to the cart, including product images, descriptions, prices, and quantities.
 - Proceed to Checkout: A button to navigate to the checkout page and complete the purchase.
 
+# Product Description
+- Detailed Information: Comprehensive details about the product, including brand, material, size options, and care instructions.
+- High-Quality Images: Multiple high-resolution images of the product from various angles, allowing users to view the product closely.
+- Pricing and Offers: Clear display of the product price, available discounts, and special offers.
+
 # Payment Checkout
 - Payment Options: Secure payment gateways for processing transactions.
 - Order Confirmation: Confirmation of the order with details for tracking and delivery.
