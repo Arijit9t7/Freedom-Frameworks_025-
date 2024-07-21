@@ -1,22 +1,26 @@
+let newSubtotal = 0
 let logoutRedirect = document.getElementById("logoutRedirect")
 let cartItems = document.getElementById("cart-items")
 let currentUser = JSON.parse(localStorage.getItem('isLoggedinUser'))
-let idofCurrentUser  = currentUser.user.id
+let idofCurrentUser = currentUser.user.id
 let baseURL = "https://traveling-ubiquitous-study.glitch.me/users"
 
+let cartSubtotal = document.getElementById("cart-subtotal")
+let cartDiscount = document.getElementById("cart-discount")
+let cartTotal = document.getElementById("cart-total")
 
-let fetchData = async (baseURL)=>{
+let fetchData = async (baseURL) => {
   let res = await fetch(baseURL)
   let data = await res.json()
   return data
 }
 
 
-const showData = async (baseURL)=>{
+const showData = async (baseURL) => {
   let newurl = `${baseURL}/${idofCurrentUser}`
   cartItems.innerHTML = ""
   let data = await fetchData(newurl)
-  data.cart.forEach((ele)=>{
+  data.cart.forEach((ele) => {
     let card = document.createElement("div")
     card.className = "cart-card"
     let cartCardDetail = document.createElement("div")
@@ -32,8 +36,8 @@ const showData = async (baseURL)=>{
     cartCardDetailTag1.innerText = ele.title
     let cartCardDetailTag2 = document.createElement("p")
     cartCardDetailTag2.innerText = ele.category
-    cartCardDetailTag.append(cartCardDetailTag1,cartCardDetailTag2)
-    cartCardDetail.append(cartCardImage,cartCardDetailTag)
+    cartCardDetailTag.append(cartCardDetailTag1, cartCardDetailTag2)
+    cartCardDetail.append(cartCardImage, cartCardDetailTag)
     let cartCardbtn = document.createElement("div")
     cartCardbtn.className = "cart-card-btn"
     let cartCardbtnminus = document.createElement("button")
@@ -42,7 +46,7 @@ const showData = async (baseURL)=>{
     countOfProduct.innerText = ele.quantity
     let cartCardbtnplus = document.createElement("button")
     cartCardbtnplus.innerText = "+"
-    cartCardbtn.append(cartCardbtnminus,countOfProduct,cartCardbtnplus)
+    cartCardbtn.append(cartCardbtnminus, countOfProduct, cartCardbtnplus)
     let cartCartPrice = document.createElement("div")
     cartCartPrice.className = "cart-card-price"
     cartCartPrice.style.display = "flex"
@@ -55,20 +59,38 @@ const showData = async (baseURL)=>{
     let cartCartDelete = document.createElement("span")
     cartCartDelete.className = "material-symbols-outlined"
     cartCartDelete.innerText = "Delete"
-    
-    cartCartPrice.append(cartCartPriceTag,cartCartDelete)
-    card.append(cartCardDetail,cartCardbtn,cartCartPrice)
+
+    cartCartPrice.append(cartCartPriceTag, cartCartDelete)
+    card.append(cartCardDetail, cartCardbtn, cartCartPrice)
     cartItems.append(card)
     console.log(ele);
+    
+    
+    
+    let newPrice = ele.price.replace(/₹|,/g, "").trim();
+    let newPriceNumber = Number(newPrice);
+    newSubtotal += newPriceNumber
+    let finalPrice = newSubtotal + 30
+
+
+    cartSubtotal.textContent = newSubtotal
+    cartDiscount.innerText = '20%'
+    cartTotal.innerText = finalPrice
+
   })
 }
 
 showData(baseURL)
 
 
-
-
-logoutRedirect.addEventListener("click", ()=>{
+logoutRedirect.addEventListener("click", () => {
   localStorage.removeItem("isLoggedinUser")
   window.location.href = "../../index.html"
 })
+
+
+
+
+
+
+
