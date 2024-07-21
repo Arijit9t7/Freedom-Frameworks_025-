@@ -245,8 +245,7 @@ nav {
 }
 
 .wishlist-card {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: red;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -267,11 +266,14 @@ nav {
 
 .wishlist-card-text {
   width: 100%;
+  display: flex;
+ flex-direction: column;
+ gap: 10px;
 }
 
 .wishlist-card-text h3,
 p {
   padding: 0;
   margin: 0;
-  color: var(--text-color);
+  color: var(--bg-color);
 }
