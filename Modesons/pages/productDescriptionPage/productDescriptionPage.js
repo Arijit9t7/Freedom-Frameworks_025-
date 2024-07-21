@@ -67,6 +67,8 @@ const handleAddToCart = async () => {
     body: JSON.stringify({
       cart: [...userCartData.cart, obj]
     })
+  }).then(() => {
+    alert('Product added to Cart');
   })
 
   // console.log(obj)
@@ -136,6 +138,8 @@ const handleAddToWhishlist = async () => {
     body: JSON.stringify({
       wishlist: [...userCartData.wishlist, obj]
     })
+  }).then(() => {
+    alert('Product added to wishlist');
   })
 
 
@@ -143,4 +147,21 @@ const handleAddToWhishlist = async () => {
 
 whishlistBtn.addEventListener('click', handleAddToWhishlist);
 
+let userCart = document.getElementById("userCart");
+let userWishlist = document.getElementById("userWishlist");
 
+userCart.addEventListener("click", () => {
+  if (localStorage.getItem('isLoggedinUser')) {
+    window.location.href = "../cart/cart.html";
+  } else {
+    alert("Please login first");
+  }
+});
+
+userWishlist.addEventListener("click", () => {
+  if (localStorage.getItem('isLoggedinUser')) {
+    window.location.href = "../wishlist/wishlist.html";
+  } else {
+    alert("Please login first");
+  }
+});
