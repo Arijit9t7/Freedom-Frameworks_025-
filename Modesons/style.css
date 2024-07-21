@@ -196,8 +196,22 @@ main {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 0px 50px;
+}
+
+.product-search-new{
+  text-align: center;
+  margin: 4rem 0px;
+  display: none;
+}
+
+.product-search-new a{
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  background-color: var(--mode-red);
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 
@@ -254,21 +268,10 @@ main {
     width: 100%;
   }
 
-  .hero-search {
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-    padding: 30px;
+  .product-search-new{
+    display: block;
   }
 
-  .hero-search input {
-    font-size: 1.1rem;
-  }
-
-  .hero-search button {
-    padding: 15px 20px;
-    font-size: 1.1rem;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -395,6 +398,8 @@ main {
   .hero-text p {
     font-size: 1rem;
   }
+
+  
 }
 
 /* Hero seaction end  */
