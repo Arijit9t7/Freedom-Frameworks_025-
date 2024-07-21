@@ -252,7 +252,7 @@ function renderProducts() {
 }
 
 function navigateToProductDescription(productId) {
-  window.location.href = `/Freedom-Frameworks_025-/Modesons/pages/productDescriptionPage/productDescriptionPage.html`;
+  window.location.href = `./pages/all product/allproduct.html`;
 }
 
 document.getElementById('viewBtn').addEventListener('click', () => {

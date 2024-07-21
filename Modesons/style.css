@@ -146,7 +146,11 @@ nav {
 .nav-main-dropdown button:hover {
   color: var(--text-color);
 }
+.nav-main-dropdown a{
+  color: var(--bg-color);
+  text-decoration: none;
 
+}
 main {
   width: 1400px;
   margin: auto;
@@ -595,7 +599,7 @@ main {
   }
 }
 
-@media screen and (max-width: 412px) {
+@media screen and (max-width: 452px) {
   .features-section {
     width: 100%;
     padding: 30px;
