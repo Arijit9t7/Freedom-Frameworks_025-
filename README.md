@@ -139,29 +139,35 @@ The ModeSens website clone aims to replicate the key functionalities and user ex
 # Beauty
 - The Beauty Section is dedicated to offering a curated selection of beauty products, including skincare, makeup, and haircare items.   
 - This section provides users with access to a range of high-quality beauty products, tailored to enhance their personal care routines.
+- ![alt text](<Screenshot 2024-07-22 091037.png>)
 
 
 # Wishlist 
 - Product Thumbnails: Displays saved products with images, brief descriptions, and prices.
 - Quick Actions: Options to move items to the cart, remove them from the wishlist, or share the wishlist with others.
 - User-Friendly Interface: Easy navigation and management of wishlist items.
+- ![alt text](<Screenshot 2024-07-22 090648.png>)
 
 # Add to cart
 - Cart Overview: Displays a summary of all items added to the cart, including product images, descriptions, prices, and quantities.
 - Proceed to Checkout: A button to navigate to the checkout page and complete the purchase.
+- ![alt text](<Screenshot 2024-07-22 090725.png>)
 
 # Product Description
 - Detailed Information: Comprehensive details about the product, including brand, material, size options, and care instructions.
 - High-Quality Images: Multiple high-resolution images of the product from various angles, allowing users to view the product closely.
 - Pricing and Offers: Clear display of the product price, available discounts, and special offers.
+- ![alt text](<Screenshot 2024-07-22 091207.png>)
 
 # Payment Checkout
 - Payment Options: Secure payment gateways for processing transactions.
 - Order Confirmation: Confirmation of the order with details for tracking and delivery.
+- ![alt text](<Screenshot 2024-07-22 090757.png>)
 
 # Orders Page
 - Order History: Displays a list of past orders with details such as order date, product information, total amount, and order status.
 - Order Tracking: Provides tracking information for shipped orders.
+- ![alt text](<Screenshot 2024-07-22 090831.png>)
 
 
 
