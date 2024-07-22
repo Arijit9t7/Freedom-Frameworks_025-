@@ -55,7 +55,6 @@ userOrderDP.addEventListener("click", () => {
 
 if (localStorage.getItem("isLoggedinUser")) {
   let username = JSON.parse(localStorage.getItem("isLoggedinUser"));
-  // console.log(username.user.name);
   loginRedirect.style.display = "none";
   logoutRedirect.style.display = "block";
   signUpRedirectBlock.style.display = "none";
@@ -104,8 +103,6 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
-// let loginRedirect = document.getElementById("loginRedirect");
-
 signupRedirect.addEventListener("click", () => {
   window.location.href = "./pages/signup/signup.html";
 });
@@ -153,23 +150,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 const scrollers = document.querySelectorAll(".scroller");
 
-// If a user hasn't opted in for recuded motion, then we add the animation
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   addAnimation();
 }
 
 function addAnimation() {
   scrollers.forEach((scroller) => {
-    // add data-animated="true" to every `.scroller` on the page
     scroller.setAttribute("data-animated", true);
-
-    // Make an array from the elements within `.scroller-inner`
     const scrollerInner = scroller.querySelector(".scroller__inner");
     const scrollerContent = Array.from(scrollerInner.children);
-
-    // For each item in the array, clone it
-    // add aria-hidden to it
-    // add it into the `.scroller-inner`
     scrollerContent.forEach((item) => {
       const duplicatedItem = item.cloneNode(true);
       duplicatedItem.setAttribute("aria-hidden", true);
@@ -177,6 +166,8 @@ function addAnimation() {
     });
   });
 }
+
+
 // arijit code ends
 
 //......................Ashita code starts........................
@@ -266,9 +257,6 @@ const products = [
     price: "$79.99",
     image: "./images/carousel2/product6.jpg",
   },
-  // ,
-  // { id: 7, name: "VERONICA BEARD", description: "Dali Leather Platform Slide Sandals In Beige", price: "$89.99", image: "./images/carousel2/product7.jpg" },
-  // { id: 8, name: "BALMAIN", description: "Monogram Jacquard Dress In Ggd White/ Navy", price: "$99.99", image: "./images/carousel2/product8.jpg" },
 ];
 
 let productsDisplayed = 3;

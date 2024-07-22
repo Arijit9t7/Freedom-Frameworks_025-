@@ -31,18 +31,12 @@ userWishlist.addEventListener("click", () => {
 
 let loginRedirect = document.getElementById("loginRedirect");
 let logoutRedirect = document.getElementById("logoutRedirect");
-// let signUpRedirectBlock = document.getElementById("signUpRedirectBlock");
 let loggedUsername = document.getElementById("loggedUsername");
-// let userNameBlock = document.getElementById("userNameBlock");
 
 if (localStorage.getItem('isLoggedinUser')) {
   let username = JSON.parse(localStorage.getItem('isLoggedinUser'));
-  // console.log(username.user.name);
   loginRedirect.style.display = "none";
   logoutRedirect.style.display = "block";
-  // signUpRedirectBlock.style.display = "none";
-  // userNameBlock.style.display = "block";
-  // loggedUsername.innerHTML = username.user.name;
 }
 
 logoutRedirect.addEventListener("click", () => {
@@ -60,7 +54,6 @@ logoutRedirect.addEventListener("click", () => {
 let productsContainer = document.getElementById("allProduct-container");
 const ShowData = (data) => {
   data.forEach((product) => {
-    // console.log(product)
     const productElement = document.createElement("div");
     productElement.className = "product";
     productElement.style.cursor = "pointer";
@@ -189,7 +182,6 @@ let StoreDataforSearch = async (URL) => {
 let fetchData = async (URL) => {
   let res = await fetch(URL);
   let data = await res.json();
-  console.log(data)
   return data;
 };
 
