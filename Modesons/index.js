@@ -107,11 +107,6 @@ signupRedirect.addEventListener("click", () => {
   window.location.href = "./pages/signup/signup.html";
 });
 
-const handleCategory = (type) => {
-  console.log(type);
-};
-// arijit code starts
-
 function showSection(section) {
   const partnerSection = document.getElementById("partner-section");
   const brandSection = document.getElementById("brand-section");
