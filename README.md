@@ -9,6 +9,9 @@ The ModeSens website clone aims to replicate the key functionalities and user ex
 
 # Deployed Link
 - https://modesensfashion.netlify.app/
+
+# Presentation Link
+- https://youtu.be/t2EWGt0Res0?si=bU3zFnAPzwjXvCOJ
   
 # Features 
 - Sign-up and sigin user.
