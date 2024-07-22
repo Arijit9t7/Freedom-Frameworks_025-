@@ -7,6 +7,9 @@ The ModeSens website clone aims to replicate the key functionalities and user ex
 # Project Type
 - Frontend | Backend
 
+# Deployed Link
+- https://modesensfashion.netlify.app/
+
 # Directory Structure
 - Freedom-Frameworks-025-/
       └── Modesons/
